@@ -1,0 +1,111 @@
+{% load static %}
+{% block mainsection %}
+<!-- Categories Section (Dark & Gold Theme) -->
+<section class="bg-[#0b0c10] text-white py-12 px-4 md:px-10 relative overflow-hidden">
+
+  <!-- Subtle Background Glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+
+    <!-- Header Badge -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 bg-[#16181f] border border-[#d4af37]/30 px-5 py-2 rounded-full shadow-lg">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#ef4444] animate-pulse"></span>
+        <span class="text-xs font-bold text-[#d4af37] tracking-widest uppercase">
+          BROWSE CATEGORIES
+        </span>
+      </div>
+    </div>
+
+    <!-- Category Slider Wrapper -->
+    <div class="relative flex items-center group">
+
+      <!-- Left Navigation Arrow -->
+      <button class="absolute left-0 lg:-left-5 z-20 bg-[#161820]/90 hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 p-3 rounded-full shadow-2xl transition-all duration-300 transform -translate-y-1/2 top-1/2 opacity-80 hover:opacity-100 hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <!-- Category Cards Grid / Scrollable Container -->
+      <div class="w-full flex items-center gap-4 overflow-x-auto scrollbar-hide py-4 px-2 scroll-smooth">
+
+        <!-- Category Card 1 -->
+        <a href="#" class="flex-none w-44 sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-2xl p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full h-36 bg-[#1a1c23] rounded-xl overflow-hidden mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <!-- Replace image src with your category image -->
+            <img src="{% static "image/ct_p.jpg" %}" alt="Packaging Machineries" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-xs sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Packaging Machineries
+          </h3>
+        </a>
+
+        <!-- Category Card 2 -->
+        <a href="#" class="flex-none w-44 sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-2xl p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full h-36 bg-[#1a1c23] rounded-xl overflow-hidden mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <img src="https://via.placeholder.com/200?text=Tape+Dispenser" alt="Tape Dispenser" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-xs sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Tape Dispenser
+          </h3>
+        </a>
+
+        <!-- Category Card 3 -->
+        <a href="#" class="flex-none w-44 sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-2xl p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full h-36 bg-[#1a1c23] rounded-xl overflow-hidden mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <img src="https://via.placeholder.com/200?text=Boxes" alt="Boxes" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-xs sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Boxes
+          </h3>
+        </a>
+
+        <!-- Category Card 4 -->
+        <a href="#" class="flex-none w-44 sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-2xl p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full h-36 bg-[#1a1c23] rounded-xl overflow-hidden mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <img src="https://via.placeholder.com/200?text=Card+%26+Sticker" alt="Card & Sticker" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-xs sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Card & Sticker
+          </h3>
+        </a>
+
+        <!-- Category Card 5 -->
+        <a href="#" class="flex-none w-44 sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-2xl p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full h-36 bg-[#1a1c23] rounded-xl overflow-hidden mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <img src="https://via.placeholder.com/200?text=Poly+Bag" alt="Poly & Shopping Bag" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-xs sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Poly & Shopping Bag
+          </h3>
+        </a>
+
+        <!-- Category Card 6 -->
+        <a href="#" class="flex-none w-44 sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-2xl p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full h-36 bg-[#1a1c23] rounded-xl overflow-hidden mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <img src="https://via.placeholder.com/200?text=Tape" alt="Tape" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-xs sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Tape
+          </h3>
+        </a>
+
+      </div>
+
+      <!-- Right Navigation Arrow -->
+      <button class="absolute right-0 lg:-right-5 z-20 bg-[#161820]/90 hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 p-3 rounded-full shadow-2xl transition-all duration-300 transform -translate-y-1/2 top-1/2 opacity-80 hover:opacity-100 hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+{% endblock %}
