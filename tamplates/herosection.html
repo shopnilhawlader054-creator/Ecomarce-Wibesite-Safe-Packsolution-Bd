@@ -1,9 +1,9 @@
 {% block herosection %}
 <!-- Hero Section -->
-<section class="bg-[#0b0c10] text-white py-8 md:py-16 px-4 md:px-10 overflow-hidden relative border-b border-[#d4af37]/20">
+<section class="bg-[#0b0c10] text-white py-6 sm:py-8 md:py-16 px-3 sm:px-6 md:px-10 overflow-hidden relative border-b border-[#d4af37]/20">
   <!-- Subtle Background Gold Glow Elements -->
-  <div class="absolute -top-24 -left-24 w-72 md:w-96 h-72 md:h-96 bg-[#d4af37]/10 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute -bottom-24 -right-24 w-72 md:w-96 h-72 md:h-96 bg-[#ef4444]/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -top-24 -left-24 w-48 sm:w-72 md:w-96 h-48 sm:h-72 md:h-96 bg-[#d4af37]/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-24 -right-24 w-48 sm:w-72 md:w-96 h-48 sm:h-72 md:h-96 bg-[#ef4444]/10 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
     
@@ -11,9 +11,9 @@
     <div class="lg:col-span-7 space-y-4 md:space-y-6 text-center lg:text-left">
       
       <!-- Brand Tagline Badge -->
-      <div class="inline-flex items-center gap-2 bg-[#16181f] border border-[#d4af37]/30 px-3 py-1 md:px-4 md:py-1.5 rounded-full shadow-lg">
-        <span class="w-2 h-2 rounded-full bg-[#ef4444] animate-ping"></span>
-        <span class="text-xs md:text-sm font-semibold text-[#d4af37] tracking-wider">
+      <div class="inline-flex items-center gap-2 bg-[#16181f] border border-[#d4af37]/30 px-3 py-1 md:px-4 md:py-1.5 rounded-full shadow-lg max-w-max mx-auto lg:mx-0">
+        <span class="w-2 h-2 rounded-full bg-[#ef4444] animate-ping shrink-0"></span>
+        <span class="text-[11px] xs:text-xs md:text-sm font-semibold text-[#d4af37] tracking-wider whitespace-nowrap">
           প্যাকেজিং এর সহজ সমাধান
         </span>
       </div>
@@ -27,18 +27,18 @@
       </h1>
 
       <!-- Secondary Bengali Subtitle -->
-      <p class="text-lg md:text-2xl text-gray-300 font-medium leading-relaxed">
+      <p class="text-base sm:text-xl md:text-2xl text-gray-300 font-medium leading-relaxed">
         প্রয়োজন থেকে পছন্দ <span class="text-[#d4af37] font-bold">সবই পাবেন এখানে</span>
       </p>
 
       <!-- CTA Buttons & Website Link -->
-      <div class="pt-2 md:pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 md:gap-4">
+      <div class="pt-2 md:pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 md:gap-4 w-full">
         <!-- Main Red Website Button -->
-        <a href="https://www.SafePackagingBD.com" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-[#dc2626] to-[#991b1b] hover:from-[#b91c1c] hover:to-[#7f1d1d] text-white font-bold text-xs md:text-sm tracking-widest uppercase px-6 py-3 md:px-8 md:py-4 rounded-full shadow-[0_4px_20px_rgba(239,68,68,0.4)] border border-red-500/40 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <a href="https://www.SafePackagingBD.com" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-[#dc2626] to-[#991b1b] hover:from-[#b91c1c] hover:to-[#7f1d1d] text-white font-bold text-xs md:text-sm tracking-widest uppercase px-5 py-3 md:px-8 md:py-4 rounded-full shadow-[0_4px_20px_rgba(239,68,68,0.4)] border border-red-500/40 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m-9 9a9 9 0 019-9" />
           </svg>
-          www.SafePackagingBD.com
+          <span class="truncate">www.SafePackagingBD.com</span>
         </a>
 
         <!-- Order Button -->
@@ -49,67 +49,75 @@
 
     </div>
 
-    <!-- Right Visual Column / Packaging Mockup Frame (5 cols) -->
-    <div class="lg:col-span-5 flex justify-center lg:justify-end relative py-2 md:py-6">
+    <!-- Right Visual Column / Custom Poly Service Frame (5 cols) -->
+    <div class="lg:col-span-5 flex justify-center lg:justify-end relative py-2 md:py-6 w-full">
       <!-- Dynamic Glow Background Effect -->
-      <div class="absolute -top-4 -bottom-4 w-72 md:w-[480px] bg-gradient-to-tr from-[#ef4444]/20 via-[#d4af37]/20 to-transparent blur-2xl rounded-full -z-10"></div>
+      <div class="absolute -top-4 -bottom-4 w-full sm:w-72 md:w-[480px] bg-gradient-to-tr from-[#ef4444]/20 via-[#d4af37]/20 to-transparent blur-2xl rounded-full -z-10"></div>
       
       <!-- Widened Card Layout -->
-      <div class="bg-[#0f1015]/90 border border-[#d4af37]/30 rounded-2xl md:rounded-3xl p-4 md:p-6 shadow-[0_15px_45px_rgba(0,0,0,0.4)] relative w-full max-w-2xl backdrop-blur-sm transition-all duration-300 hover:border-[#d4af37]/60">
+      <div class="bg-[#0f1015]/90 border border-[#d4af37]/30 rounded-2xl md:rounded-3xl p-3.5 sm:p-5 md:p-6 shadow-[0_15px_45px_rgba(0,0,0,0.4)] relative w-full max-w-2xl backdrop-blur-sm transition-all duration-300 hover:border-[#d4af37]/60">
         
-        <!-- Top Bar -->
-        <div class="flex items-center justify-between border-b border-gray-800/80 pb-3 mb-4">
+        <!-- Top Header Bar -->
+        <div class="flex items-center justify-between border-b border-gray-800/80 pb-2.5 md:pb-3 mb-3 md:mb-4 gap-2">
           <div class="flex items-center gap-2 md:gap-3">
-            <span class="relative flex h-2 w-2 md:h-2.5 md:w-2.5">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 md:h-2.5 md:w-2.5 bg-green-500"></span>
+            <span class="relative flex h-2 w-2 md:h-2.5 md:w-2.5 shrink-0">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4af37] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 md:h-2.5 md:w-2.5 bg-[#d4af37]"></span>
             </span>
-            <span class="text-[10px] md:text-xs font-semibold tracking-widest text-gray-200 uppercase">Dashboard Showcase</span>
+            <span class="text-[10px] sm:text-xs font-semibold tracking-widest text-gray-200 uppercase truncate">Custom Poly Service</span>
           </div>
-          <div class="flex items-center gap-1.5 md:gap-2">
-            <span class="text-[9px] md:text-[10px] font-mono text-[#d4af37]">Status: Live</span>
-            <span class="text-[9px] md:text-[10px] font-mono bg-[#d4af37]/10 text-gray-400 px-2 py-0.5 md:px-3 md:py-1 rounded-full border border-[#d4af37]/20">Safe Packaging BD</span>
-          </div>
+          <span class="text-[9px] sm:text-[10px] font-mono bg-[#d4af37]/10 text-[#d4af37] px-2 py-0.5 rounded-full border border-[#d4af37]/30 shrink-0"> Custom Print </span>
         </div>
 
-        <!-- Main Content Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 md:gap-6 items-center">
+        <!-- Service Features Container -->
+        <div class="space-y-2.5 sm:space-y-3">
           
-          <!-- Left Column (Featured Product) -->
-          <div class="sm:col-span-7 bg-[#161820] border border-gray-800 rounded-xl md:rounded-2xl p-3 md:p-4 relative overflow-hidden group">
-            <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-[#d4af37]/10 rounded-full blur-2xl group-hover:bg-[#d4af37]/20 transition-all"></div>
-            
-            <div class="flex items-center gap-3 md:gap-4 relative z-10">
-              <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-tr from-[#d4af37]/15 to-[#ef4444]/15 rounded-xl flex items-center justify-center text-2xl md:text-3xl shadow-inner border border-[#d4af37]/15 shrink-0">
-                📦
-              </div>
-              <div class="text-left">
-                <span class="text-[9px] md:text-[10px] font-black text-[#ef4444] uppercase tracking-wider bg-[#ef4444]/10 px-2 py-0.5 rounded">Top Choice</span>
-                <h4 class="text-base md:text-lg font-extrabold text-white mt-1 leading-tight">Master Carton</h4>
-                <p class="text-[11px] md:text-xs text-gray-400 mt-0.5">Export Quality Heavy Duty Box</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column (Stats and Action) -->
-          <div class="sm:col-span-5 space-y-2.5 md:space-y-4">
-            <!-- Wholesale Availability -->
-            <div class="bg-[#161820] border border-gray-800/80 rounded-xl px-3 py-2 md:px-4 md:py-3 flex items-center gap-2.5">
-              <span class="text-xl md:text-2xl">🏷️</span>
-              <div class="text-left">
-                <p class="text-xs font-bold text-gray-100">Poly & Tapes</p>
-                <p class="text-[10px] text-gray-400">Wholesale Rate BD</p>
-              </div>
-            </div>
-
-            <!-- Action Button -->
-            <button class="w-full bg-gradient-to-r from-[#d4af37] via-[#b89528] to-[#aa7c11] text-black font-bold text-xs md:text-sm tracking-wider uppercase px-4 py-2.5 md:py-3.5 rounded-xl shadow-lg hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(212,175,55,0.3)] transition-all flex items-center justify-center gap-2 group">
-              <span>Order Bulk Packaging</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          <!-- Feature Item 1: Custom Size & Design -->
+          <div class="bg-[#161820] border border-gray-800/90 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5 sm:gap-3">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#d4af37]/10 border border-[#d4af37]/30 rounded-lg flex items-center justify-center text-[#d4af37] shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
               </svg>
-            </button>
+            </div>
+            <div class="text-left min-w-0">
+              <h4 class="text-xs sm:text-sm font-bold text-gray-100 truncate">যে কোনো সাইজ ও কাস্টম ডিজাইন</h4>
+              <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">আপনার ব্র্যান্ডের প্রয়োজন অনুযায়ী যে কোনো মাপে তৈরি করা হয়</p>
+            </div>
           </div>
+
+          <!-- Feature Item 2: Logo Print -->
+          <div class="bg-[#161820] border border-gray-800/90 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5 sm:gap-3">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#ef4444]/10 border border-[#ef4444]/30 rounded-lg flex items-center justify-center text-[#ef4444] shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+            </div>
+            <div class="text-left min-w-0">
+              <h4 class="text-xs sm:text-sm font-bold text-gray-100 truncate">উন্নত মানের লোগো প্রিন্টিং</h4>
+              <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">হাই-কোয়ালিটি কালার প্রিন্টে নিজের ব্র্যান্ড ফুটিয়ে তুলুন</p>
+            </div>
+          </div>
+
+          <!-- Feature Item 3: Quality Material -->
+          <div class="bg-[#161820] border border-gray-800/90 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5 sm:gap-3">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#00c885]/10 border border-[#00c885]/30 rounded-lg flex items-center justify-center text-[#00c885] shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div class="text-left min-w-0">
+              <h4 class="text-xs sm:text-sm font-bold text-gray-100 truncate">মজবুত ও প্রিমিয়াম মেটেরিয়াল</h4>
+              <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">দীর্ঘস্থায়ী এবং নিরাপদ প্যাকেজিং সুবিধা</p>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <button class="w-full mt-1 bg-gradient-to-r from-[#d4af37] via-[#b89528] to-[#aa7c11] text-black font-extrabold text-xs md:text-sm tracking-wider uppercase px-4 py-2.5 sm:py-3 rounded-xl shadow-lg hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(212,175,55,0.3)] transition-all flex items-center justify-center gap-2 group">
+            <span>কাস্টমাইজড পলি তৈরি করুন</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
 
         </div>
 

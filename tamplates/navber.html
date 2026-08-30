@@ -1,9 +1,9 @@
 {% block navber %}
 <nav class="bg-[#0b0c10] border-b border-[#d4af37]/20 py-3.5 px-4 md:px-10 shadow-2xl sticky top-0 z-50 backdrop-blur-md">
-  <div class="max-w-7xl mx-auto flex items-center justify-between gap-6">
+  <div class="max-w-7xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-y-3 gap-x-4 md:gap-x-6">
     
     <!-- 1. Left: Premium Logo & Brand Name -->
-    <a href="/" class="flex items-center gap-3.5 group">
+    <a href="/" class="flex items-center gap-3.5 group order-1">
       <!-- Shield Logo Container with Gold Glow -->
       <div class="relative w-11 h-11 flex items-center justify-center bg-gradient-to-br from-[#ffe58f] via-[#d4af37] to-[#aa7c11] rounded-xl p-[1.5px] shadow-[0_0_15px_rgba(212,175,55,0.25)] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
         <div class="w-full h-full bg-[#121318] rounded-[10.5px] flex items-center justify-center">
@@ -25,8 +25,8 @@
       </div>
     </a>
 
-    <!-- 2. Middle: Navigation Links -->
-    <div class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-gray-300">
+    <!-- 2. Middle: Desktop Navigation Links -->
+    <div class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-gray-300 order-2">
       <a href="#" class="hover:text-[#d4af37] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#d4af37] hover:after:w-full after:transition-all">Shop</a>
       <a href="#" class="hover:text-[#d4af37] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#d4af37] hover:after:w-full after:transition-all">Custom Order</a>
       <a href="#" class="hover:text-[#d4af37] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#d4af37] hover:after:w-full after:transition-all">Blog</a>
@@ -48,7 +48,7 @@
     </div>
 
     <!-- 3. Search Bar -->
-    <div class="flex-1 max-w-xs md:max-w-md hidden md:block mx-4">
+    <div class="w-full md:flex-1 md:max-w-xs lg:max-w-md mx-0 md:mx-4 order-last md:order-2">
       <div class="relative">
         <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-[#d4af37]">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -60,7 +60,7 @@
     </div>
 
     <!-- 4. Right Side Actions -->
-    <div class="flex items-center gap-5">
+    <div class="flex items-center gap-3 sm:gap-5 order-3">
       <!-- Cart Icon -->
       <a href="#" class="p-2.5 border border-[#d4af37]/30 rounded-xl bg-[#16181f] hover:border-[#d4af37] hover:bg-[#d4af37]/10 transition-all relative group">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#d4af37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -70,19 +70,97 @@
       </a>
 
       <!-- Login -->
-      <a href="#" class="text-xs font-bold tracking-widest text-[#d4af37] hover:text-[#ffe58f] uppercase transition-colors">
+      <a href="#" class="hidden sm:block text-xs font-bold tracking-widest text-[#d4af37] hover:text-[#ffe58f] uppercase transition-colors">
         Log In
       </a>
 
       <!-- Metallic Red WhatsApp Button -->
-      <a href="https://wa.me/8801700000000" target="_blank" class="bg-gradient-to-r from-[#dc2626] to-[#991b1b] hover:from-[#b91c1c] hover:to-[#7f1d1d] text-white text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-full flex items-center gap-2 shadow-[0_4px_15px_rgba(220,38,38,0.3)] border border-red-500/30 transition-all">
+      <a href="https://wa.me/8801700000000" target="_blank" class="hidden sm:flex bg-gradient-to-r from-[#dc2626] to-[#991b1b] hover:from-[#b91c1c] hover:to-[#7f1d1d] text-white text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-full items-center gap-2 shadow-[0_4px_15px_rgba(220,38,38,0.3)] border border-red-500/30 transition-all">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current text-white" viewBox="0 0 24 24">
           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
         </svg>
         <span>WhatsApp</span>
       </a>
+
+      <!-- Hamburger Button (Mobile Only) -->
+      <button onclick="toggleMenu(event)"   class="lg:hidden p-2 text-[#d4af37] hover:text-[#ffe58f] focus:outline-none transition-colors cursor-pointer" >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
 
   </div>
 </nav>
-{% endblock  %}
+
+<!-- Mobile Drawer Backdrop Overlay -->
+<div onclick="toggleMenu(event)" id="mobile-menu-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0"></div>
+
+<!-- Mobile Left Off-Canvas Drawer Sidebar -->
+<aside onclick="toggleMenu(event)" id="mobile-menu-drawer" class="fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-[#0b0c10] border-r border-[#d4af37]/30 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out p-6 flex flex-col justify-between overflow-y-auto shadow-2xl">
+  
+  <div>
+    <!-- Drawer Header: Logo & Close Button -->
+    <div class="flex items-center justify-between pb-6 border-b border-[#d4af37]/20">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 flex items-center justify-center bg-gradient-to-br from-[#ffe58f] via-[#d4af37] to-[#aa7c11] rounded-lg p-[1px]">
+          <div class="w-full h-full bg-[#121318] rounded-[7px] flex items-center justify-center">
+            <svg class="w-5 h-5 text-[#ef4444] fill-current" viewBox="0 0 24 24">
+              <path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm0 4l6 3.5v5.5L12 18.5 6 15V9.5L12 6z"/>
+            </svg>
+          </div>
+        </div>
+        <span class="text-sm font-black tracking-widest bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent uppercase">
+          Safe Packaging
+        </span>
+      </div>
+
+      <!-- Close Icon Button -->
+      <button id="menu-close-btn" class="p-2 text-gray-400 hover:text-[#ef4444] transition-colors cursor-pointer" aria-label="Close Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="mt-6 flex flex-col gap-3 text-sm font-semibold uppercase tracking-wider text-gray-200">
+      <a href="#" class="py-2.5 px-3 rounded-lg hover:bg-[#d4af37]/10 hover:text-[#d4af37] transition-all">Shop</a>
+      <a href="#" class="py-2.5 px-3 rounded-lg hover:bg-[#d4af37]/10 hover:text-[#d4af37] transition-all">Custom Order</a>
+      <a href="#" class="py-2.5 px-3 rounded-lg hover:bg-[#d4af37]/10 hover:text-[#d4af37] transition-all">Blog</a>
+
+      <!-- Collapsible Categories Accordion -->
+      <details class="group py-1 px-3">
+        <summary class="flex items-center justify-between cursor-pointer list-none py-1 hover:text-[#d4af37] transition-colors">
+          <span>Categories</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#d4af37] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <ul class="mt-2 pl-4 flex flex-col gap-2 border-l border-[#d4af37]/20 text-xs text-gray-400">
+          <li><a href="#" class="block py-1.5 hover:text-[#ffe58f] transition-colors">Carton Box</a></li>
+          <li><a href="#" class="block py-1.5 hover:text-[#ffe58f] transition-colors">Poly Bag</a></li>
+          <li><a href="#" class="block py-1.5 hover:text-[#ffe58f] transition-colors">Packaging Tape</a></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+
+  <!-- Bottom Actions Inside Drawer -->
+  <div class="pt-6 border-t border-[#d4af37]/20 flex flex-col gap-3">
+    <!-- Log In Button -->
+    <a href="#" class="w-full text-center py-2.5 border border-[#d4af37]/40 rounded-xl text-xs font-bold tracking-widest text-[#d4af37] hover:bg-[#d4af37]/10 uppercase transition-colors">
+      Log In
+    </a>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/8801700000000" target="_blank" class="w-full bg-gradient-to-r from-[#dc2626] to-[#991b1b] text-white text-xs font-bold tracking-wider uppercase py-2.5 rounded-xl flex items-center justify-center gap-2 shadow-lg border border-red-500/30">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current text-white" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+
+</aside>
+{% endblock %}
