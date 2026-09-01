@@ -4,4 +4,6 @@ from django.shortcuts import render
 def products(request):
     print('hitting succes')
 
-    return render(request,'base.html')
+    return render(request,'product_card.html')
+# def main (request):
+#     return render(request.'')

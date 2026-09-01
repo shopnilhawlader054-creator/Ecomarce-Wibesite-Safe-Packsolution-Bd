@@ -8,13 +8,20 @@
     <title>Safe Packing Bd</title>
     {% tailwind_css %}
 </head>
-<body>
- {% include "navber.html" %}
- {% include "herosection.html" %}
- 
-{% include "mainsection.html" %}
-{% include "product_card.html" %}
-{% include "fotter.html" %}
- <script src="{% static 'js/script.js' %}"></script>
+<body class="bg-[#0b0c10] text-gray-100 font-sans antialiased selection:bg-[#d4af37] selection:text-black min-h-screen flex flex-col">
+
+    {% include "navber.html" %}
+    {% include "mainsection.html" %}
+
+    <main class="flex-grow">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% include "fotter.html" %}
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

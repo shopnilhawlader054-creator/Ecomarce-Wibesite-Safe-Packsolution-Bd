@@ -1,186 +1,653 @@
-{% load static %}
-{% block product_card %}
+{% extends "base.html" %}
 
-<!-- Product Section (Matching Clean Theme Divider) -->
-<section class="bg-[#0b0c10] text-white py-12 px-2 sm:px-4 md:px-10 relative border-t border-[#d4af37]/20 border-b border-[#d4af37]/10 overflow-hidden">
-  
-  <!-- Subtle Glow Background Elements -->
-  <div class="absolute top-1/3 left-0 w-80 h-80 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute bottom-10 right-0 w-80 h-80 bg-[#ef4444]/5 rounded-full blur-3xl pointer-events-none"></div>
+{% load static %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hero Section -->
+<section class="bg-[#0b0c10] text-white py-6 sm:py-8 md:py-16 px-3 sm:px-6 md:px-10 overflow-hidden relative border-b border-[#d4af37]/20">
+  <!-- Subtle Background Gold Glow Elements -->
+  <div class="absolute -top-24 -left-24 w-48 sm:w-72 md:w-96 h-48 sm:h-72 md:h-96 bg-[#d4af37]/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-24 -right-24 w-48 sm:w-72 md:w-96 h-48 sm:h-72 md:h-96 bg-[#ef4444]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
+    
+    <!-- Left Content Column (7 cols) -->
+    <div class="lg:col-span-7 space-y-4 md:space-y-6 text-center lg:text-left">
+      
+      <!-- Brand Tagline Badge -->
+      <div class="inline-flex items-center gap-2 bg-[#16181f] border border-[#d4af37]/30 px-3 py-1 md:px-4 md:py-1.5 rounded-full shadow-lg max-w-max mx-auto lg:mx-0">
+        <span class="w-2 h-2 rounded-full bg-[#ef4444] animate-ping shrink-0"></span>
+        <span class="text-[11px] xs:text-xs md:text-sm font-semibold text-[#d4af37] tracking-wider whitespace-nowrap">
+          প্যাকেজিং এর সহজ সমাধান
+        </span>
+      </div>
+
+      <!-- Main Headline / Brand Name -->
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-wide leading-tight">
+        <span class="bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent uppercase drop-shadow-md">
+          Safe Packaging
+        </span>
+        <span class="text-[#ef4444] ml-1 sm:ml-2 uppercase">BD</span>
+      </h1>
+
+      <!-- Secondary Bengali Subtitle -->
+      <p class="text-base sm:text-xl md:text-2xl text-gray-300 font-medium leading-relaxed">
+        প্রয়োজন থেকে পছন্দ <span class="text-[#d4af37] font-bold">সবই পাবেন এখানে</span>
+      </p>
+
+      <!-- CTA Buttons & Website Link -->
+      <div class="pt-2 md:pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 md:gap-4 w-full">
+        <!-- Main Red Website Button -->
+        <a href="https://www.SafePackagingBD.com" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-[#dc2626] to-[#991b1b] hover:from-[#b91c1c] hover:to-[#7f1d1d] text-white font-bold text-xs md:text-sm tracking-widest uppercase px-5 py-3 md:px-8 md:py-4 rounded-full shadow-[0_4px_20px_rgba(239,68,68,0.4)] border border-red-500/40 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m-9 9a9 9 0 019-9" />
+          </svg>
+          <span class="truncate">www.SafePackagingBD.com</span>
+        </a>
+
+        <!-- Order Button -->
+        <a href="#" class="w-full sm:w-auto bg-[#16181f] hover:bg-[#d4af37]/10 text-[#d4af37] border border-[#d4af37]/40 font-bold text-xs md:text-sm tracking-wider uppercase px-6 py-3 md:px-8 md:py-4 rounded-full transition-all text-center">
+          অর্ডার করুন
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Right Visual Column / Custom Poly Service Frame (5 cols) -->
+    <div class="lg:col-span-5 flex justify-center lg:justify-end relative py-2 md:py-6 w-full">
+      <!-- Dynamic Glow Background Effect -->
+      <div class="absolute -top-4 -bottom-4 w-full sm:w-72 md:w-[480px] bg-gradient-to-tr from-[#ef4444]/20 via-[#d4af37]/20 to-transparent blur-2xl rounded-full -z-10"></div>
+      
+      <!-- Widened Card Layout -->
+      <div class="bg-[#0f1015]/90 border border-[#d4af37]/30 rounded-2xl md:rounded-3xl p-3.5 sm:p-5 md:p-6 shadow-[0_15px_45px_rgba(0,0,0,0.4)] relative w-full max-w-2xl backdrop-blur-sm transition-all duration-300 hover:border-[#d4af37]/60">
+        
+        <!-- Top Header Bar -->
+        <div class="flex items-center justify-between border-b border-gray-800/80 pb-2.5 md:pb-3 mb-3 md:mb-4 gap-2">
+          <div class="flex items-center gap-2 md:gap-3">
+            <span class="relative flex h-2 w-2 md:h-2.5 md:w-2.5 shrink-0">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4af37] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 md:h-2.5 md:w-2.5 bg-[#d4af37]"></span>
+            </span>
+            <span class="text-[10px] sm:text-xs font-semibold tracking-widest text-gray-200 uppercase truncate">Custom Poly Service</span>
+          </div>
+          <span class="text-[9px] sm:text-[10px] font-mono bg-[#d4af37]/10 text-[#d4af37] px-2 py-0.5 rounded-full border border-[#d4af37]/30 shrink-0"> Custom Print </span>
+        </div>
+
+        <!-- Service Features Container -->
+        <div class="space-y-2.5 sm:space-y-3">
+          
+          <!-- Feature Item 1: Custom Size & Design -->
+          <div class="bg-[#161820] border border-gray-800/90 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5 sm:gap-3">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#d4af37]/10 border border-[#d4af37]/30 rounded-lg flex items-center justify-center text-[#d4af37] shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              </svg>
+            </div>
+            <div class="text-left min-w-0">
+              <h4 class="text-xs sm:text-sm font-bold text-gray-100 truncate">যে কোনো সাইজ ও কাস্টম ডিজাইন</h4>
+              <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">আপনার ব্র্যান্ডের প্রয়োজন অনুযায়ী যে কোনো মাপে তৈরি করা হয়</p>
+            </div>
+          </div>
+
+          <!-- Feature Item 2: Logo Print -->
+          <div class="bg-[#161820] border border-gray-800/90 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5 sm:gap-3">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#ef4444]/10 border border-[#ef4444]/30 rounded-lg flex items-center justify-center text-[#ef4444] shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+            </div>
+            <div class="text-left min-w-0">
+              <h4 class="text-xs sm:text-sm font-bold text-gray-100 truncate">উন্নত মানের লোগো প্রিন্টিং</h4>
+              <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">হাই-কোয়ালিটি কালার প্রিন্টে নিজের ব্র্যান্ড ফুটিয়ে তুলুন</p>
+            </div>
+          </div>
+
+          <!-- Feature Item 3: Quality Material -->
+          <div class="bg-[#161820] border border-gray-800/90 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5 sm:gap-3">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#00c885]/10 border border-[#00c885]/30 rounded-lg flex items-center justify-center text-[#00c885] shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div class="text-left min-w-0">
+              <h4 class="text-xs sm:text-sm font-bold text-gray-100 truncate">মজবুত ও প্রিমিয়াম মেটেরিয়াল</h4>
+              <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">দীর্ঘস্থায়ী এবং নিরাপদ প্যাকেজিং সুবিধা</p>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <button class="w-full mt-1 bg-gradient-to-r from-[#d4af37] via-[#b89528] to-[#aa7c11] text-black font-extrabold text-xs md:text-sm tracking-wider uppercase px-4 py-2.5 sm:py-3 rounded-xl shadow-lg hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(212,175,55,0.3)] transition-all flex items-center justify-center gap-2 group">
+            <span>কাস্টমাইজড পলি তৈরি করুন</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Categories Section (Dark & Gold Theme) -->
+<section class="bg-[#0b0c10] text-white py-12 px-2 sm:px-4 md:px-10 relative overflow-hidden">
+
+  <!-- Subtle Background Glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto relative z-10">
 
-    <!-- Header Section -->
-    <div class="mb-8">
-      <div class="inline-flex items-center gap-2 bg-[#16181f] border border-[#d4af37]/30 px-3 py-1 rounded-full shadow-lg mb-2">
-        <span class="w-2 h-2 rounded-full bg-[#ef4444] animate-ping"></span>
-        <span class="text-[10px] sm:text-xs font-bold text-[#d4af37] tracking-wider uppercase">
-          PICKED FOR YOU
+    <!-- Header Badge -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 bg-[#16181f] border border-[#d4af37]/30 px-5 py-2 rounded-full shadow-lg">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#ef4444] animate-pulse"></span>
+        <span class="text-xs font-bold text-[#d4af37] tracking-widest uppercase">
+          BROWSE CATEGORIES
         </span>
       </div>
-      <h2 class="text-3xl font-black text-gray-100 tracking-wide">
-        For <span class="bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent">You</span>
-      </h2>
-      <p class="text-xs text-gray-400 mt-1">
-        A curated selection of our best products, just for you.
-      </p>
     </div>
 
-    <!-- Product Cards Grid (3 Columns on Mobile with tight gap) -->
-    <div class="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1.5 sm:gap-4">
+    <!-- Category Slider Wrapper -->
+    <div class="relative flex items-center group">
 
-      <!-- Card 1: Standard Product with Discount -->
-      <div class="bg-[#121318] border border-gray-800/90 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
-        <div>
-          <!-- Image & Badge Container -->
-          <div class="relative w-full aspect-square bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-2 sm:mb-3 border border-gray-800/50">
-            <span class="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 bg-[#00c885] text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded-full uppercase tracking-wide shadow-md">
-              IN STOCK
-            </span>
-            <img src="#" alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      <!-- Left Navigation Arrow -->
+      <button class="absolute left-0 lg:-left-5 z-20 bg-[#161820]/90 hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 p-3 rounded-full shadow-2xl transition-all duration-300 transform -translate-y-1/2 top-1/2 opacity-80 hover:opacity-100 hover:scale-110 hidden sm:flex">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <!-- Category Cards Grid / Scrollable Container (Mobile: 3 Cards) -->
+      <div class="w-full flex items-center gap-1.5 sm:gap-4 overflow-x-auto scrollbar-hide py-4 px-1 sm:px-2 scroll-smooth">
+
+        <!-- Category Card 1 -->
+        <a href="#" class="flex-none w-[calc(33.333%-0.25rem)] sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full aspect-square sm:h-36 bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-1.5 sm:mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <!-- Replace image src with your category image -->
+            <img src="{% static "image/ct_p.jpg" %}" alt="Packaging Machineries" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
           </div>
-
-          <!-- Product Details -->
-          <h3 class="text-[10px] sm:text-xs font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors line-clamp-2 h-7 sm:h-8 leading-tight sm:leading-snug">
-            Sage Wireless Digital Door Chime R...
+          <h3 class="text-[10px] sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Packaging Machineries
           </h3>
+        </a>
 
-          <!-- Price -->
-          <div class="flex flex-wrap items-baseline gap-0.5 sm:gap-1.5 mt-1 sm:mt-2">
-            <span class="text-[9px] sm:text-xs text-gray-500 line-through">৳১০২০</span>
-            <span class="text-[11px] sm:text-sm font-extrabold text-[#d4af37]">৳৮৫০</span>
-            <span class="text-[8px] sm:text-[10px] text-gray-400">/ পিস</span>
+        <!-- Category Card 2 -->
+        <a href="#" class="flex-none w-[calc(33.333%-0.25rem)] sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full aspect-square sm:h-36 bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-1.5 sm:mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <img src="https://via.placeholder.com/200?text=Tape+Dispenser" alt="Tape Dispenser" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
           </div>
-        </div>
+          <h3 class="text-[10px] sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Tape Dispenser
+          </h3>
+        </a>
 
-        <!-- Add to Cart Button -->
-        <button class="w-full mt-2 sm:mt-3 bg-[#161820] hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 font-bold text-[9px] sm:text-[11px] py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-1.5 shadow-md">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-          </svg>
-          <span class="truncate">Add to Cart</span>
-        </button>
+        <!-- Category Card 3 -->
+        <a href="#" class="flex-none w-[calc(33.333%-0.25rem)] sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full aspect-square sm:h-36 bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-1.5 sm:mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <img src="https://via.placeholder.com/200?text=Boxes" alt="Boxes" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-[10px] sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Boxes
+          </h3>
+        </a>
+
+        <!-- Category Card 4 -->
+        <a href="#" class="flex-none w-[calc(33.333%-0.25rem)] sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full aspect-square sm:h-36 bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-1.5 sm:mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <img src="https://via.placeholder.com/200?text=Card+%26+Sticker" alt="Card & Sticker" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-[10px] sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Card & Sticker
+          </h3>
+        </a>
+
+        <!-- Category Card 5 -->
+        <a href="#" class="flex-none w-[calc(33.333%-0.25rem)] sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full aspect-square sm:h-36 bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-1.5 sm:mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <img src="https://via.placeholder.com/200?text=Poly+Bag" alt="Poly & Shopping Bag" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-[10px] sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Poly & Shopping Bag
+          </h3>
+        </a>
+
+        <!-- Category Card 6 -->
+        <a href="#" class="flex-none w-[calc(33.333%-0.25rem)] sm:w-48 bg-[#121318] border border-gray-800/80 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] group/card">
+          <div class="w-full aspect-square sm:h-36 bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-1.5 sm:mb-3 border border-gray-800/50 flex items-center justify-center relative">
+            <img src="https://via.placeholder.com/200?text=Tape" alt="Tape" class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500">
+          </div>
+          <h3 class="text-[10px] sm:text-sm font-bold text-gray-200 group-hover/card:text-[#d4af37] transition-colors line-clamp-1">
+            Tape
+          </h3>
+        </a>
+
       </div>
 
-      <!-- Card 2: Request Quote Card -->
-      <div class="bg-[#121318] border border-gray-800/90 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
-        <div>
-          <!-- Image & Badge Container -->
-          <div class="relative w-full aspect-square bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-2 sm:mb-3 border border-gray-800/50">
-            <span class="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 bg-[#00c885] text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded-full uppercase tracking-wide shadow-md">
-              IN STOCK
-            </span>
-            <img src="https://via.placeholder.com/300?text=Transparent+Card" alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-
-          <!-- Product Details -->
-          <h3 class="text-[10px] sm:text-xs font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors line-clamp-2 h-7 sm:h-8 leading-tight sm:leading-snug">
-            Customized Transparent Plastic Card
-          </h3>
-
-          <!-- Price / Request Quote Text -->
-          <div class="mt-1 sm:mt-2 h-4 sm:h-5">
-            <span class="text-[9px] sm:text-xs italic font-medium text-[#ef4444]">Request Quote</span>
-          </div>
-        </div>
-
-        <!-- Quote Button -->
-        <button class="w-full mt-2 sm:mt-3 bg-[#ef4444] hover:bg-[#dc2626] text-white font-bold text-[9px] sm:text-[11px] py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-1.5 shadow-md">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zm-4 0h-2v2h2V9z" clip-rule="evenodd" />
-          </svg>
-          <span class="truncate">Quote</span>
-        </button>
-      </div>
-
-      <!-- Card 3: Regular Price Card -->
-      <div class="bg-[#121318] border border-gray-800/90 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
-        <div>
-          <div class="relative w-full aspect-square bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-2 sm:mb-3 border border-gray-800/50">
-            <span class="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 bg-[#00c885] text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded-full uppercase tracking-wide shadow-md">
-              IN STOCK
-            </span>
-            <img src="https://via.placeholder.com/300?text=Garbage+Poly" alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-
-          <h3 class="text-[10px] sm:text-xs font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors line-clamp-2 h-7 sm:h-8 leading-tight sm:leading-snug">
-            Black Garbage Poly
-          </h3>
-
-          <div class="flex flex-wrap items-baseline gap-0.5 sm:gap-1 mt-1 sm:mt-2">
-            <span class="text-[11px] sm:text-sm font-extrabold text-[#d4af37]">৳১৯০</span>
-            <span class="text-[8px] sm:text-[10px] text-gray-400">/ পিস</span>
-          </div>
-        </div>
-
-        <button class="w-full mt-2 sm:mt-3 bg-[#161820] hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 font-bold text-[9px] sm:text-[11px] py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-1.5 shadow-md">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-          </svg>
-          <span class="truncate">Add to Cart</span>
-        </button>
-      </div>
-
-      <!-- Card 4: Discounted Price Card -->
-      <div class="bg-[#121318] border border-gray-800/90 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
-        <div>
-          <div class="relative w-full aspect-square bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-2 sm:mb-3 border border-gray-800/50">
-            <span class="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 bg-[#00c885] text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded-full uppercase tracking-wide shadow-md">
-              IN STOCK
-            </span>
-            <img src="https://via.placeholder.com/300?text=Silver+Invoice+Mailer" alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-
-          <h3 class="text-[10px] sm:text-xs font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors line-clamp-2 h-7 sm:h-8 leading-tight sm:leading-snug">
-            8" x 10" + 2" Silver Invoice Mailer...
-          </h3>
-
-          <div class="flex flex-wrap items-baseline gap-0.5 sm:gap-1.5 mt-1 sm:mt-2">
-            <span class="text-[9px] sm:text-xs text-gray-500 line-through">৳৪.২</span>
-            <span class="text-[11px] sm:text-sm font-extrabold text-[#d4af37]">৳৪</span>
-            <span class="text-[8px] sm:text-[10px] text-gray-400">/ পিস</span>
-          </div>
-        </div>
-
-        <button class="w-full mt-2 sm:mt-3 bg-[#161820] hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 font-bold text-[9px] sm:text-[11px] py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-1.5 shadow-md">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-          </svg>
-          <span class="truncate">Add to Cart</span>
-        </button>
-      </div>
-
-      <!-- Card 5: Discounted Scissors Card -->
-      <div class="bg-[#121318] border border-gray-800/90 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
-        <div>
-          <div class="relative w-full aspect-square bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-2 sm:mb-3 border border-gray-800/50">
-            <span class="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 bg-[#00c885] text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded-full uppercase tracking-wide shadow-md">
-              IN STOCK
-            </span>
-            <img src="{% static "image/image_1.jpg" %}" alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </div>
-
-          <h3 class="text-[10px] sm:text-xs font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors line-clamp-2 h-7 sm:h-8 leading-tight sm:leading-snug">
-            DL3159 Stainless Steel Scissors...
-          </h3>
-
-          <div class="flex flex-wrap items-baseline gap-0.5 sm:gap-1.5 mt-1 sm:mt-2">
-            <span class="text-[9px] sm:text-xs text-gray-500 line-through">৳১৬০</span>
-            <span class="text-[11px] sm:text-sm font-extrabold text-[#d4af37]">৳১৫০</span>
-            <span class="text-[8px] sm:text-[10px] text-gray-400">/ পিস</span>
-          </div>
-        </div>
-
-        <button class="w-full mt-2 sm:mt-3 bg-[#161820] hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 font-bold text-[9px] sm:text-[11px] py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-1.5 shadow-md">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-          </svg>
-          <span class="truncate">Add to Cart</span>
-        </button>
-      </div>
+      <!-- Right Navigation Arrow -->
+      <button class="absolute right-0 lg:-right-5 z-20 bg-[#161820]/90 hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 p-3 rounded-full shadow-2xl transition-all duration-300 transform -translate-y-1/2 top-1/2 opacity-80 hover:opacity-100 hover:scale-110 hidden sm:flex">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
 
     </div>
 
   </div>
 </section>
-{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Product Section (Matching Clean Theme Divider) -->
+
+<section class="bg-[#0b0c10] text-white py-12 px-2 sm:px-4 md:px-10 relative border-t border-[#d4af37]/20 border-b border-[#d4af37]/10 overflow-hidden">
+
+ 
+
+  <!-- Subtle Glow Background Elements -->
+
+  <div class="absolute top-1/3 left-0 w-80 h-80 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="absolute bottom-10 right-0 w-80 h-80 bg-[#ef4444]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+
+
+  <div class="max-w-7xl mx-auto relative z-10">
+
+
+
+    <!-- Header Section -->
+
+    <div class="mb-8">
+
+      <div class="inline-flex items-center gap-2 bg-[#16181f] border border-[#d4af37]/30 px-3 py-1 rounded-full shadow-lg mb-2">
+
+        <span class="w-2 h-2 rounded-full bg-[#ef4444] animate-ping"></span>
+
+        <span class="text-[10px] sm:text-xs font-bold text-[#d4af37] tracking-wider uppercase">
+
+          PICKED FOR YOU
+
+        </span>
+
+      </div>
+
+      <h2 class="text-3xl font-black text-gray-100 tracking-wide">
+
+        For <span class="bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent">You</span>
+
+      </h2>
+
+      <p class="text-xs text-gray-400 mt-1">
+
+        A curated selection of our best products, just for you.
+
+      </p>
+
+    </div>
+
+
+
+    <!-- Product Cards Grid (3 Columns on Mobile with tight gap) -->
+
+    <div class="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1.5 sm:gap-4">
+
+
+
+      <!-- Card 1: Standard Product with Discount -->
+
+      <div class="bg-[#121318] border border-gray-800/90 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+
+        <div>
+
+          <!-- Image & Badge Container -->
+
+          <div class="relative w-full aspect-square bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-2 sm:mb-3 border border-gray-800/50">
+
+            <span class="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 bg-[#00c885] text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded-full uppercase tracking-wide shadow-md">
+
+              IN STOCK
+
+            </span>
+
+            <img src="#" alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+
+          </div>
+
+
+
+          <!-- Product Details -->
+
+          <h3 class="text-[10px] sm:text-xs font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors line-clamp-2 h-7 sm:h-8 leading-tight sm:leading-snug">
+
+            Sage Wireless Digital Door Chime R...
+
+          </h3>
+
+
+
+          <!-- Price -->
+
+          <div class="flex flex-wrap items-baseline gap-0.5 sm:gap-1.5 mt-1 sm:mt-2">
+
+            <span class="text-[9px] sm:text-xs text-gray-500 line-through">৳১০২০</span>
+
+            <span class="text-[11px] sm:text-sm font-extrabold text-[#d4af37]">৳৮৫০</span>
+
+            <span class="text-[8px] sm:text-[10px] text-gray-400">/ পিস</span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Add to Cart Button -->
+
+        <button class="w-full mt-2 sm:mt-3 bg-[#161820] hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 font-bold text-[9px] sm:text-[11px] py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-1.5 shadow-md">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+
+          </svg>
+
+          <span class="truncate">Add to Cart</span>
+
+        </button>
+
+      </div>
+
+
+
+      <!-- Card 2: Request Quote Card -->
+
+      <div class="bg-[#121318] border border-gray-800/90 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+
+        <div>
+
+          <!-- Image & Badge Container -->
+
+          <div class="relative w-full aspect-square bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-2 sm:mb-3 border border-gray-800/50">
+
+            <span class="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 bg-[#00c885] text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded-full uppercase tracking-wide shadow-md">
+
+              IN STOCK
+
+            </span>
+
+            <img src="https://via.placeholder.com/300?text=Transparent+Card" alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+
+          </div>
+
+
+
+          <!-- Product Details -->
+
+          <h3 class="text-[10px] sm:text-xs font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors line-clamp-2 h-7 sm:h-8 leading-tight sm:leading-snug">
+
+            Customized Transparent Plastic Card
+
+          </h3>
+
+
+
+          <!-- Price / Request Quote Text -->
+
+          <div class="mt-1 sm:mt-2 h-4 sm:h-5">
+
+            <span class="text-[9px] sm:text-xs italic font-medium text-[#ef4444]">Request Quote</span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Quote Button -->
+
+        <button class="w-full mt-2 sm:mt-3 bg-[#ef4444] hover:bg-[#dc2626] text-white font-bold text-[9px] sm:text-[11px] py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-1.5 shadow-md">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+
+            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zm-4 0h-2v2h2V9z" clip-rule="evenodd" />
+
+          </svg>
+
+          <span class="truncate">Quote</span>
+
+        </button>
+
+      </div>
+
+
+
+      <!-- Card 3: Regular Price Card -->
+
+      <div class="bg-[#121318] border border-gray-800/90 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+
+        <div>
+
+          <div class="relative w-full aspect-square bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-2 sm:mb-3 border border-gray-800/50">
+
+            <span class="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 bg-[#00c885] text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded-full uppercase tracking-wide shadow-md">
+
+              IN STOCK
+
+            </span>
+
+            <img src="https://via.placeholder.com/300?text=Garbage+Poly" alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+
+          </div>
+
+
+
+          <h3 class="text-[10px] sm:text-xs font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors line-clamp-2 h-7 sm:h-8 leading-tight sm:leading-snug">
+
+            Black Garbage Poly
+
+          </h3>
+
+
+
+          <div class="flex flex-wrap items-baseline gap-0.5 sm:gap-1 mt-1 sm:mt-2">
+
+            <span class="text-[11px] sm:text-sm font-extrabold text-[#d4af37]">৳১৯০</span>
+
+            <span class="text-[8px] sm:text-[10px] text-gray-400">/ পিস</span>
+
+          </div>
+
+        </div>
+
+
+
+        <button class="w-full mt-2 sm:mt-3 bg-[#161820] hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 font-bold text-[9px] sm:text-[11px] py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-1.5 shadow-md">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+
+          </svg>
+
+          <span class="truncate">Add to Cart</span>
+
+        </button>
+
+      </div>
+
+
+
+      <!-- Card 4: Discounted Price Card -->
+
+      <div class="bg-[#121318] border border-gray-800/90 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+
+        <div>
+
+          <div class="relative w-full aspect-square bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-2 sm:mb-3 border border-gray-800/50">
+
+            <span class="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 bg-[#00c885] text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded-full uppercase tracking-wide shadow-md">
+
+              IN STOCK
+
+            </span>
+
+            <img src="https://via.placeholder.com/300?text=Silver+Invoice+Mailer" alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+
+          </div>
+
+
+
+          <h3 class="text-[10px] sm:text-xs font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors line-clamp-2 h-7 sm:h-8 leading-tight sm:leading-snug">
+
+            8" x 10" + 2" Silver Invoice Mailer...
+
+          </h3>
+
+
+
+          <div class="flex flex-wrap items-baseline gap-0.5 sm:gap-1.5 mt-1 sm:mt-2">
+
+            <span class="text-[9px] sm:text-xs text-gray-500 line-through">৳৪.২</span>
+
+            <span class="text-[11px] sm:text-sm font-extrabold text-[#d4af37]">৳৪</span>
+
+            <span class="text-[8px] sm:text-[10px] text-gray-400">/ পিস</span>
+
+          </div>
+
+        </div>
+
+
+
+       <a href="{% url 'product' %}" 
+   class="w-full mt-2 sm:mt-3 bg-[#161820] hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 font-bold text-[9px] sm:text-[11px] py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-1.5 shadow-md">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+    </svg>
+    <span class="truncate">Add to Cart</span>
+</a>
+
+      </div>
+
+
+
+      <!-- Card 5: Discounted Scissors Card -->
+
+      <div class="bg-[#121318] border border-gray-800/90 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-3 shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+
+        <div>
+
+          <div class="relative w-full aspect-square bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-2 sm:mb-3 border border-gray-800/50">
+
+            <span class="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 bg-[#00c885] text-white text-[7px] sm:text-[9px] font-bold px-1 sm:px-2 py-0.5 rounded-full uppercase tracking-wide shadow-md">
+
+              IN STOCK
+
+            </span>
+
+            <img src="{% static "image/image_1.jpg" %}" alt="Product Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+
+          </div>
+
+
+
+          <h3 class="text-[10px] sm:text-xs font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors line-clamp-2 h-7 sm:h-8 leading-tight sm:leading-snug">
+
+            DL3159 Stainless Steel Scissors...
+
+          </h3>
+
+
+
+          <div class="flex flex-wrap items-baseline gap-0.5 sm:gap-1.5 mt-1 sm:mt-2">
+
+            <span class="text-[9px] sm:text-xs text-gray-500 line-through">৳১৬০</span>
+
+            <span class="text-[11px] sm:text-sm font-extrabold text-[#d4af37]">৳১৫০</span>
+
+            <span class="text-[8px] sm:text-[10px] text-gray-400">/ পিস</span>
+
+          </div>
+
+        </div>
+
+
+
+        <button class="w-full mt-2 sm:mt-3 bg-[#161820] hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 font-bold text-[9px] sm:text-[11px] py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl transition-all duration-300 flex items-center justify-center gap-1 sm:gap-1.5 shadow-md">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+
+          </svg>
+
+          <span class="truncate">Add to Cart</span>
+
+        </button>
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+</section>
+{% endblock  %}
