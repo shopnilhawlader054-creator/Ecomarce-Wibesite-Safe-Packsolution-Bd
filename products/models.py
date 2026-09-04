@@ -9,6 +9,7 @@ class Products(models.Model):
     ('box', 'বক্স'),
     ('pen', 'পেন'),
     ('tape_cutter', 'টেপ কাটার'),
+    ('polly','পলি')
     ]
     category = models.CharField(
     max_length=50,

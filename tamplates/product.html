@@ -15,18 +15,18 @@
         <!-- Image Container & Action Buttons Section -->
         <div class="lg:col-span-6 xl:col-span-6 space-y-4">
           <div class="w-full h-80 sm:h-96 md:h-[420px] bg-[#090a0d] rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center relative p-6 group shadow-2xl">
-            <img id="main-product-img" src="{% static "image/image_1.jpg" %}" alt="Bubble Wrap Roll" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105">
+            <img id="main-product-img" src="{{ product.product_image.url }}" alt="{{product.product_name}}" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105">
             
             <span class="absolute top-4 left-4 bg-[#1e2330] text-[#d4af37] border border-[#d4af37]/30 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-md">
               Packaging Material
             </span>
 
             <span id="img-size-badge" class="absolute bottom-4 right-4 bg-gradient-to-r from-red-600 to-rose-700 text-white font-extrabold text-xs px-4 py-1.5 rounded-xl shadow-lg uppercase tracking-wider border border-red-500/30">
-              Bubble Wrap
+              {{product.product_name}}
             </span>
           </div>
 
-          <!-- Add to Cart & Buy Now Buttons (Placed directly below image) -->
+          <!-- Add to Cart & Buy Now Buttons -->
           <div id="cart-action-buttons" class="grid grid-cols-2 gap-3 pt-2">
             <button type="button" class="bg-[#090a0d] hover:bg-[#d4af37]/10 border border-[#d4af37]/40 text-[#d4af37] font-bold text-sm sm:text-base py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-95 text-center">
               Add to Cart
@@ -46,7 +46,7 @@
               <span class="text-xs font-semibold text-emerald-400">In Stock & Ready to Ship</span>
             </div>
             <h1 id="product-title" class="text-xl sm:text-2xl md:text-3xl font-black text-white leading-snug">
-              Bubble Wrap Roll - Packaging Protection
+              {{ product.product_name }}
             </h1>
           </div>
 
@@ -59,78 +59,23 @@
               <button id="reset-sizes-btn" type="button" class="text-xs text-sky-400 hover:text-sky-300 transition-colors font-medium">Reset</button>
             </div>
 
+            <!-- Dynamic Size Loop Container -->
             <div class="space-y-2.5 max-h-[320px] overflow-y-auto pr-1" id="size-options-container">
               
+              {% for size in product_size %}
               <div class="size-card bg-[#12141c] border border-slate-800 rounded-xl p-3 flex items-center justify-between transition-all cursor-pointer hover:border-slate-600 hover:bg-[#181b26]"
-                   data-name="5 Yards" data-code="TMP-5YD" data-price="150.00">
+                   data-name="{{ size.productsize }}" data-code="{{ size.size_code }}" data-price="{{ size.price }}">
                 <div>
-                  <h5 class="text-sm font-bold text-slate-200">5 Yards</h5>
+                  <h5 class="text-sm font-bold text-slate-200">{{ size.productsize }}</h5>
                   <div class="flex items-center gap-1 text-emerald-400 font-semibold text-xs sm:text-sm mt-0.5">
-                    <span>৳১৫০.০০</span>
+                    <span>৳{{ size.price }}</span>
                   </div>
                 </div>
                 <div class="w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center bg-[#090a0d]">
                   <span class="tick-icon bg-[#d4af37] text-xs text-black font-extrabold w-full h-full flex items-center justify-center rounded-full leading-none hidden">✓</span>
                 </div>
               </div>
-
-              <div class="size-card bg-[#12141c] border border-slate-800 rounded-xl p-3 flex items-center justify-between transition-all cursor-pointer hover:border-slate-600 hover:bg-[#181b26]"
-                   data-name="10 Yards" data-code="TMP-10YD" data-price="300.00">
-                <div>
-                  <h5 class="text-sm font-bold text-slate-200">10 Yards</h5>
-                  <div class="flex items-center gap-1 text-emerald-400 font-semibold text-xs sm:text-sm mt-0.5">
-                    <span>৳৩০০.০০</span>
-                  </div>
-                </div>
-                <div class="w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center bg-[#090a0d]">
-                  <span class="tick-icon bg-[#d4af37] text-xs text-black font-extrabold w-full h-full flex items-center justify-center rounded-full leading-none hidden">✓</span>
-                </div>
-              </div>
-
-              <div class="size-card bg-[#12141c] border border-slate-800 rounded-xl p-3 flex items-center justify-between transition-all cursor-pointer hover:border-slate-600 hover:bg-[#181b26]"
-                   data-name="15 yards" data-code="TMP-15YD" data-price="440.00">
-                <div>
-                  <h5 class="text-sm font-bold text-slate-200">15 yards</h5>
-                  <div class="flex items-center gap-1 text-emerald-400 font-semibold text-xs sm:text-sm mt-0.5">
-                    <span>৳৪৪০.০০</span>
-                  </div>
-                </div>
-                <div class="w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center bg-[#090a0d]">
-                  <span class="tick-icon bg-[#d4af37] text-xs text-black font-extrabold w-full h-full flex items-center justify-center rounded-full leading-none hidden">✓</span>
-                </div>
-              </div>
-
-              <div class="size-card bg-[#12141c] border border-slate-800 rounded-xl p-3 flex items-center justify-between transition-all cursor-pointer hover:border-slate-600 hover:bg-[#181b26]"
-                   data-name="20 yards" data-code="TMP-20YD" data-price="550.00">
-                <div>
-                  <h5 class="text-sm font-bold text-slate-200">20 yards</h5>
-                  <div class="flex items-center gap-1 text-emerald-400 font-semibold text-xs sm:text-sm mt-0.5">
-                    <span>৳৫৫০.০০</span>
-                  </div>
-                </div>
-                <div class="w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center bg-[#090a0d]">
-                  <span class="tick-icon bg-[#d4af37] text-xs text-black font-extrabold w-full h-full flex items-center justify-center rounded-full leading-none hidden">✓</span>
-                </div>
-              </div>
-
-              <div class="size-card bg-gradient-to-r from-[#181c26] to-[#12141c] border border-slate-800 rounded-xl p-3 flex items-center justify-between shadow-xl"
-                   data-name="FULL ROLL" data-code="TMP-[#FULL]" data-price="2190.00">
-                <div>
-                  <div class="flex items-center gap-1.5">
-                    <h5 class="text-sm font-black text-white uppercase tracking-wider">FULL ROLL</h5>
-                    <span class="bg-[#d4af37]/20 text-[#d4af37] text-[9px] font-extrabold px-1.5 py-0.5 rounded">BEST VALUE</span>
-                  </div>
-                  <div class="flex items-center gap-1 text-emerald-400 font-semibold text-xs sm:text-sm mt-1">
-                    <span>৳২১৯০.০০</span>
-                  </div>
-                </div>
-
-                <div class="flex items-center bg-[#090a0d] p-1 rounded-xl cursor-pointer border border-slate-700/80 shadow-inner"> 
-                  <button type="button" class="btn-minus w-7 h-7 flex items-center justify-center bg-slate-800 hover:bg-slate-700 active:scale-95 text-white rounded-lg font-bold text-sm transition-all">-</button>
-                  <input type="number" value="0" min="0" class="qty-input w-9 h-7 text-center bg-transparent text-sm font-bold text-white focus:outline-none" readonly>
-                  <button type="button" class="btn-plus w-7 h-7 flex items-center justify-center bg-gradient-to-r from-[#d4af37] to-[#b5932b] hover:from-[#c29e2e] hover:to-[#9e7f22] active:scale-95 text-black rounded-lg font-black text-sm shadow transition-all">+</button>
-                </div>
-              </div>
+              {% endfor %}
 
             </div>
           </div>
@@ -144,159 +89,136 @@
 
       <!-- Order Summary Breakdown -->
       <div class="w-full bg-[#090a0d] rounded-2xl p-5 border border-slate-800 space-y-4 shadow-xl">
-  <div class="flex justify-between items-center border-b border-slate-800/80 pb-3">
-    <h4 class="text-sm sm:text-base font-bold text-[#d4af37] uppercase tracking-wider flex items-center gap-2">
-      🛒 Order Summary Breakdown
-    </h4>
-    <span class="text-xs text-slate-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800">Live Calculation</span>
-  </div>
-  
-  <div class="space-y-3 text-sm">
-    
-    <!-- grid ক্লাসটি যোগ করা হয়েছে -->
-    <div id="summary-table-header" class=" grid grid-cols-12 font-bold text-slate-300 border-b border-slate-800/80 pb-2 text-center text-xs sm:text-sm">
-      <span class="col-span-5 text-left">Item</span>
-      <span class="col-span-2">Price</span>
-      <span class="col-span-2">Qty</span>
-      <span class="col-span-3 text-right">Total</span>
-    </div>
-
-    <div id="summary-items-list" class="space-y-2 max-h-48 overflow-y-auto pr-1">
-      <p id="no-size-msg" class="text-xs sm:text-sm text-slate-400 text-center py-6 italic bg-[#12141c]/50 rounded-xl border border-dashed border-slate-800">
-        কোনো সাইজ সিলেক্ট করা হয়নি
-      </p>
-    </div>
-
-    <div class="border-t border-slate-800/90 pt-3 mt-3 flex justify-between items-center text-sm sm:text-base font-bold">
-      <span class="text-slate-200">Total Amount:</span>
-      <span id="grand-total-price" class="text-lg sm:text-xl font-black text-[#d4af37]">৳০.০০</span>
-    </div>
-  </div>
-</div>
-
-      <!-- Footer Info Sections -->
-      <div class="pt-6 border-t border-slate-800 space-y-6">
+        <div class="flex justify-between items-center border-b border-slate-800/80 pb-3">
+          <h4 class="text-sm sm:text-base font-bold text-[#d4af37] uppercase tracking-wider flex items-center gap-2">
+            🛒 Order Summary Breakdown
+          </h4>
+          <span class="text-xs text-slate-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800">Live Calculation</span>
+        </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div class="space-y-3 text-sm">
           
-          <div class="md:col-span-8 space-y-3 bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-slate-800">
-            <h3 class="text-sm sm:text-base font-bold text-[#d4af37] uppercase tracking-wider flex items-center gap-2">
-              📄 Product Description
-            </h3>
-            <div class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-3">
-              <p>Bubble Wrap (বাবল র‍্যাপ) ভঙ্গুর ও delicate product safe রাখার জন্য খুবই জনপ্রিয় একটি packaging material। Product এর চারপাশে wrap করলে আঘাত, চাপ ও scratch থেকে protection দিতে সাহায্য করে।</p>
-              <p>Glass items, cosmetics, electronics, ceramic products, kitchen items সহ বিভিন্ন fragile product delivery ও storage এর জন্য এটি ব্যবহার করা হয়।</p>
+          <div id="summary-table-header" class="grid grid-cols-12 font-bold text-slate-300 border-b border-slate-800/80 pb-2 text-center text-xs sm:text-sm">
+            <span class="col-span-5 text-left">Item</span>
+            <span class="col-span-2">Price</span>
+            <span class="col-span-2">Qty</span>
+            <span class="col-span-3 text-right">Total</span>
+          </div>
+          
+          <div id="summary-items-list" class="space-y-2 max-h-48 overflow-y-auto pr-1">
+            <p id="no-size-msg" class="text-xs sm:text-sm text-slate-400 text-center py-6 italic bg-[#12141c]/50 rounded-xl border border-dashed border-slate-800">
+              কোনো সাইজ সিলেক্ট করা হয়নি
+            </p>
+          </div>
+
+          <div class="border-t border-slate-800/90 pt-3 mt-3 flex justify-between items-center text-sm sm:text-base font-bold">
+            <span class="text-slate-200">Total Amount:</span>
+            <span id="grand-total-price" class="text-lg sm:text-xl font-black text-[#d4af37]">৳০.০০</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Info Sections (Unified Grid Row Layout) -->
+      <div class="pt-6 border-t border-slate-800">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
+          
+          <!-- Card 1: Product Description -->
+          <div class="bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-3 flex flex-col justify-between">
+            <div>
+              <h3 class="text-sm sm:text-base font-bold text-[#d4af37] uppercase tracking-wider flex items-center gap-2 mb-3">
+                📄 Product Description
+              </h3>
+              <div class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-3">
+                {{product.Product_Description}}
+              </div>
             </div>
           </div>
 
-          <div class="md:col-span-4 bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-3">
-            <h3 class="text-sm sm:text-base font-bold text-[#d4af37] uppercase tracking-wider flex items-center gap-2">
-              📦 Product Details
-            </h3>
-            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
-              <li class="flex items-center justify-between border-b border-slate-800/80 pb-2">
-                <span class="text-slate-400 flex items-center gap-1.5">⚖️ ওজন:</span>
-                <span class="font-bold text-slate-100">৫ কেজি ±</span>
-              </li>
-              <li class="flex items-center justify-between border-b border-slate-800/80 pb-2">
-                <span class="text-slate-400 flex items-center gap-1.5">📐 প্রস্থ:</span>
-                <span class="font-bold text-slate-100">৪৩"</span>
-              </li>
-            </ul>
+          <!-- Card 2: Product Details -->
+          <div class="bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-3 flex flex-col justify-between">
+            <div>
+              <h3 class="text-sm sm:text-base font-bold text-[#d4af37] uppercase tracking-wider flex items-center gap-2 mb-3">
+                📦 Product Details
+              </h3>
+              <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-center space-x-2  border-b border-slate-800/80 pb-2">
+                  <span class="text-slate-400 flex items-center gap-1.5">⚖️ ওজন:</span>
+                  <span class="font-bold text-slate-100">৫ কেজি ±</span>
+                </li>
+                <li class="flex items-center space-x-2 border-b border-slate-800/80 pb-2">
+                  <span class="text-slate-400 flex items-center gap-1.5">📐 প্রস্থ:</span>
+                  <span class="font-bold text-slate-100">৪৩"</span>
+                </li>
+              </ul>
+            </div>
           </div>
+
+       {% if key_features %}
+          <div class="bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-3 flex flex-col justify-between">
+            <div>
+              <h4 class="text-xs sm:text-sm font-bold text-[#d4af37] uppercase tracking-wider flex items-center gap-2 mb-3">
+                ✨ Key Features
+              </h4>
+              <ul class="text-xs sm:text-sm text-slate-300 space-y-2.5">
+                {% for item in key_features%}
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span>{{item}}</span>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Card 4: Suitable For -->
+          {% if subtitle_list %}
+          <div class="bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-3 flex flex-col justify-between">
+            <div>
+              <h4 class="text-xs sm:text-sm font-bold text-[#d4af37] uppercase tracking-wider flex items-center gap-2 mb-3">
+                ✅ Suitable For
+              </h4>
+              <ul class="text-xs sm:text-sm text-slate-300 space-y-1">
+                {% for item in subtitle_list %}
+                <li class="flex items-center gap-2 p-2.5 rounded-xl ">
+                  <span class="text-[#d4af37] font-bold">▪</span>
+                  <span>{{ item }}</span>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Card 5: Why Choose This Product? -->
+        {% if product.Why_Choose_This_Product %}
+          <div class="bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-2.5 flex flex-col justify-between">
+            <div>
+              <h4 class="text-xs sm:text-sm font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2 mb-3">
+                💡 Why Choose This Product?
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+               {{product.Why_Choose_This_Product }}
+              </p>
+            </div>
+          </div>
+           {% endif %}
+
+          <!-- Card 6: Refund & Exchange Policy -->
+        {% if product.Refund_Exchange_Policy %}
+          <div class="bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-red-500/20 space-y-2.5 flex flex-col justify-between">
+            <div>
+              <h4 class="text-xs sm:text-sm font-bold text-rose-400 uppercase tracking-wider flex items-center gap-2 mb-3">
+                🔄 Refund & Exchange Policy
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                {{product.Refund_Exchange_Policy}}
+              </p>
+            </div>
+          </div>
+          {% endif %}
 
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
-          <div class="bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-3">
-            <h4 class="text-xs sm:text-sm font-bold text-[#d4af37] uppercase tracking-wider flex items-center gap-2">
-              ✨ Key Features
-            </h4>
-            <ul class="text-xs sm:text-sm text-slate-300 space-y-2.5">
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">✓</span>
-                <span>Air bubble protection</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">✓</span>
-                <span>Fragile product safety packaging</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">✓</span>
-                <span>Lightweight & flexible</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">✓</span>
-                <span>সহজে কাটা ও ব্যবহার করা যায়</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">✓</span>
-                <span>Courier ও moving packaging এর জন্য উপযোগী</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-emerald-400 font-bold">✓</span>
-                <span>Product scratch কমাতে সাহায্য করে</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-3">
-            <h4 class="text-xs sm:text-sm font-bold text-[#d4af37] uppercase tracking-wider flex items-center gap-2">
-              ✅ Suitable For
-            </h4>
-            <ul class="text-xs sm:text-sm text-slate-300 space-y-2.5">
-              <li class="flex items-start gap-2">
-                <span class="text-[#d4af37] font-bold">▪</span>
-                <span>Glass products</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#d4af37] font-bold">▪</span>
-                <span>Cosmetics packaging</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#d4af37] font-bold">▪</span>
-                <span>Electronics items</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#d4af37] font-bold">▪</span>
-                <span>Kitchen accessories</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#d4af37] font-bold">▪</span>
-                <span>eCommerce delivery</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-[#d4af37] font-bold">▪</span>
-                <span>Courier & warehouse packaging</span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
-          <div class="bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-2.5">
-            <h4 class="text-xs sm:text-sm font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2">
-              💡 Why Choose This Product?
-            </h4>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              যারা safe delivery এবং product protection নিয়ে চিন্তা করেন, তাদের জন্য Bubble Wrap খুবই প্রয়োজনীয়। এটি product damage risk কমাতে সাহায্য করে এবং packaging কে আরও secure করে।
-            </p>
-          </div>
-
-          <div class="bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-red-500/20 space-y-2.5">
-            <h4 class="text-xs sm:text-sm font-bold text-rose-400 uppercase tracking-wider flex items-center gap-2">
-              🔄 Refund & Exchange Policy
-            </h4>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              আমাদের সব product-এর জন্য refund এবং exchange policy available আছে। যদি product এ কোনো সমস্যা থাকে বা delivery এর পর issue পাওয়া যায়, তাহলে আমাদের সাথে যোগাযোগ করে exchange অথবা refund নেওয়া যাবে। Customer satisfaction আমাদের কাছে গুরুত্বপূর্ণ।
-            </p>
-          </div>
-
-        </div>
-
       </div>
 
     </div>
