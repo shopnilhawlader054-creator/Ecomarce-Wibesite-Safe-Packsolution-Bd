@@ -17,7 +17,7 @@ def all_products(request):
         'babol':babol
     }
 
-    return render(request,'product_card.html',context)
+    return render(request,'main_section.html',context)
 
 
 def product (request,pk):
@@ -43,3 +43,23 @@ def product (request,pk):
     }
     print('hitting success')
     return render(request,'product.html',context)
+
+
+
+def others_catagory(request):
+  product_ct = Products.objects.filter(Q(category = 'bubble_wrap')|
+                                       Q(category = 'pen') )
+                                      
+  context ={
+      'product':product_ct
+  }
+ 
+  return render(request,'catagory.html',context)
+
+
+def Packaging_Machineries_catagory(request):
+    product_ct = Products.objects.filter(category = 'polly')
+    context ={
+        'product' :  product_ct 
+    }
+    return render(request,'catagory.html',context)

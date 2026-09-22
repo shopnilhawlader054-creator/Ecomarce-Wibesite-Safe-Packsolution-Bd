@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="bg-[#0b0c10] text-white min-h-screen py-12 px-2 sm:px-4 md:px-10 relative overflow-hidden">
+
+  <!-- Subtle Background Glow Elements -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute top-1/4 left-0 w-80 h-80 bg-[#d4af37]/5 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-10 right-0 w-80 h-80 bg-[#ef4444]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <!-- Main Container -->
+  <div class="max-w-7xl mx-auto relative z-10 space-y-8">
+    
+    <!-- Header Section -->
+    <div class="text-center space-y-2">
+      <h1 class="text-2xl sm:text-4xl font-black text-gray-100 uppercase tracking-wide">
+        <span class="bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent">
+          {% comment %} {{ category_display_name }} {% endcomment %}
+        </span>
+      </h1>
+      <p class="text-xs text-gray-400">এই ক্যাটাগরির সকল প্রিমিয়াম প্রোডাক্ট</p>
+    </div>
+
+    <!-- Dynamic Products Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      
+      {% for products in product %}
+        <div class="bg-[#121318] text-white border border-gray-800/80 hover:border-[#d4af37]/60 rounded-xl sm:rounded-2xl p-2.5 sm:p-3.5 shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_10px_25px_-5px_rgba(212,175,55,0.15)] flex flex-col justify-between group">
+          <div>
+            <div class="relative w-full aspect-square bg-[#1a1c23] rounded-lg sm:rounded-xl overflow-hidden mb-3 border border-gray-800/50 flex items-center justify-center">
+              {% if products.product_image %}
+                <img src="{{ products.product_image.url }}" alt="{{ product.product_name }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              {% else %}
+                <img src="https://via.placeholder.com/300?text=No+Image" alt="Placeholder" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              {% endif %}
+            </div>
+
+            <h3 class="text-xs sm:text-sm font-bold text-gray-200 group-hover:text-[#d4af37] transition-colors line-clamp-2 leading-snug">
+              {{ products.product_name }}
+            </h3>
+
+            <div class="flex items-baseline gap-1 mt-2 mb-3">
+              <span class="text-sm sm:text-base font-black text-[#d4af37]">৳{{ products.price }}</span>
+              <span class="text-[10px] text-gray-400 font-medium">/ পیس</span>
+            </div>
+          </div>
+
+          <a href="{% url 'product_detail' products.id %}" class="w-full bg-[#161820] hover:bg-[#d4af37] text-[#d4af37] hover:text-black border border-[#d4af37]/40 font-bold text-xs py-2 rounded-lg transition-all duration-300 flex items-center justify-center shadow-md">
+            <span>Buy Now</span>
+          </a>
+        </div>
+      {% empty %}
+        <div class="col-span-full text-center py-20 space-y-3">
+          <p class="text-sm text-gray-400">এই ক্যাটাগরিতে বর্তমানে কোনো পণ্য নেই।</p>
+          <a href="/" class="inline-block bg-[#d4af37] text-black font-bold text-xs px-5 py-2 rounded-lg hover:bg-[#fff3b0] transition-all">
+            হোম পেজে ফিরে যান
+          </a>
+        </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+{% endblock %}

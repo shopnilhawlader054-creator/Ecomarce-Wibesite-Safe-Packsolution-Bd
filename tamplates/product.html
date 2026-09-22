@@ -26,14 +26,14 @@
             </span>
           </div>
 
-          <!-- Add to Cart & Buy Now Buttons -->
+          <!-- Add to Cart & Buy Now Links -->
           <div id="cart-action-buttons" class="grid grid-cols-2 gap-3 pt-2">
-            <button type="button" class="bg-[#090a0d] hover:bg-[#d4af37]/10 border border-[#d4af37]/40 text-[#d4af37] font-bold text-sm sm:text-base py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-95 text-center">
+            <a href="#" class="bg-[#090a0d] hover:bg-[#d4af37]/10 border border-[#d4af37]/40 text-[#d4af37] font-bold text-sm sm:text-base py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-95 text-center flex items-center justify-center">
               Add to Cart
-            </button>
-            <button type="button" class="bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 text-white font-bold text-sm sm:text-base py-3.5 px-4 rounded-xl shadow-lg border border-red-500/30 transition-all active:scale-95 text-center">
+            </a>
+            <a href="{% url 'order_from' %}" class="bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 text-white font-bold text-sm sm:text-base py-3.5 px-4 rounded-xl shadow-lg border border-red-500/30 transition-all active:scale-95 text-center flex items-center justify-center">
               Buy Now
-            </button>
+            </a>
           </div>
         </div>
 
@@ -141,7 +141,7 @@
                 📦 Product Details
               </h3>
               <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
-                <li class="flex items-center space-x-2  border-b border-slate-800/80 pb-2">
+                <li class="flex items-center space-x-2 border-b border-slate-800/80 pb-2">
                   <span class="text-slate-400 flex items-center gap-1.5">⚖️ ওজন:</span>
                   <span class="font-bold text-slate-100">৫ কেজি ±</span>
                 </li>
@@ -153,7 +153,7 @@
             </div>
           </div>
 
-       {% if key_features %}
+        {% if key_features %}
           <div class="bg-[#090a0d] p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-3 flex flex-col justify-between">
             <div>
               <h4 class="text-xs sm:text-sm font-bold text-[#d4af37] uppercase tracking-wider flex items-center gap-2 mb-3">
