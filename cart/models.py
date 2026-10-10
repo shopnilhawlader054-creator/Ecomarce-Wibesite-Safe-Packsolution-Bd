@@ -36,6 +36,12 @@ class CartItem(models.Model):
       validators=[MinValueValidator(Decimal("0.01"))],
       verbose_name="দাম",
   )
+  sub_total = models.DecimalField(
+     max_digits=10,
+          decimal_places=2,
+          validators=[MinValueValidator(Decimal("0.01"))],
+          verbose_name="প্রোডাক্টের মোট দাম",
+  )
 
   # গেস্ট ইউজারের কার্ট ট্র্যাক করার জন্য সেশন কি (Session Key)
   session_key = models.CharField(

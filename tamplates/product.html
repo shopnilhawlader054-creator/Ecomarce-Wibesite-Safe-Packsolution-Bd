@@ -28,10 +28,10 @@
 
           <!-- Add to Cart & Buy Now Links -->
           <div id="cart-action-buttons" class="grid grid-cols-2 gap-3 pt-2">
-            <a href="#" class="bg-[#090a0d] hover:bg-[#d4af37]/10 border border-[#d4af37]/40 text-[#d4af37] font-bold text-sm sm:text-base py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-95 text-center flex items-center justify-center">
+            <a href="#" id='add-to-cart' class="bg-[#090a0d]  hover:bg-[#d4af37]/10 border border-[#d4af37]/40 text-[#d4af37] font-bold text-sm sm:text-base py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-95 text-center flex items-center justify-center">
               Add to Cart
             </a>
-            <a href="{% url 'order_from' %}" class="bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 text-white font-bold text-sm sm:text-base py-3.5 px-4 rounded-xl shadow-lg border border-red-500/30 transition-all active:scale-95 text-center flex items-center justify-center">
+            <a href="{% url "order_from" %}" id='by_now' class="bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 text-white font-bold text-sm sm:text-base py-3.5 px-4 rounded-lg shadow-lg border border-red-500/30 transition-all active:scale-95 text-center flex items-center justify-center">
               Buy Now
             </a>
           </div>
@@ -54,7 +54,7 @@
             
             <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
               <h3 class="text-xs sm:text-sm font-bold text-slate-200 uppercase tracking-wider">
-                Select Quantity <span class="text-red-500">*</span>
+                Select Quantity & Size <span class="text-red-500">*</span>
               </h3>
               <button id="reset-sizes-btn" type="button" class="text-xs text-sky-400 hover:text-sky-300 transition-colors font-medium">Reset</button>
             </div>
@@ -63,17 +63,38 @@
             <div class="space-y-2.5 max-h-[320px] overflow-y-auto pr-1" id="size-options-container">
               
               {% for size in product_size %}
-              <div class="size-card bg-[#12141c] border border-slate-800 rounded-xl p-3 flex items-center justify-between transition-all cursor-pointer hover:border-slate-600 hover:bg-[#181b26]"
-                   data-name="{{ size.productsize }}" data-code="{{ size.size_code }}" data-price="{{ size.price }}">
-                <div>
+              <div class="size-card bg-[#12141c] border border-slate-800 rounded-xl p-3 flex items-center justify-between transition-all hover:border-slate-600 hover:bg-[#181b26]"
+                   data-name="{{ size.productsize }}" data-weight="{{ size.weight }}" data-price="{{ size.price }}">
+                
+                <div class="flex-1">
                   <h5 class="text-sm font-bold text-slate-200">{{ size.productsize }}</h5>
                   <div class="flex items-center gap-1 text-emerald-400 font-semibold text-xs sm:text-sm mt-0.5">
-                    <span>৳{{ size.price }}</span>
+                    <span id='size-price'>৳{{ size.price }}</span>
                   </div>
                 </div>
-                <div class="w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center bg-[#090a0d]">
-                  <span class="tick-icon bg-[#d4af37] text-xs text-black font-extrabold w-full h-full flex items-center justify-center rounded-full leading-none hidden">✓</span>
+
+                <!-- কন্ডিশনাল লজিক: True হলে কোয়ান্টিটি বক্স এবং False হলে টিক মার্ক -->
+                <div class="flex items-center gap-3">
+                  {% if size.productsize not in unqty %}
+                    <!-- কোয়ান্টিটি বক্স (থিম কালার অনুযায়ী) -->
+                    <div class="flex items-center gap-1.5 bg-[#090a0d] p-1 rounded-xl border border-slate-800 shadow-sm" onclick="event.stopPropagation();">
+                      <!-- মাইনাস বাটন -->
+                      <button type="button" class="cursor-pointer w-8 h-8 flex items-center justify-center rounded-lg border border-slate-700 bg-[#12141c] text-slate-300 hover:bg-slate-800 hover:text-white text-sm font-bold transition-all btn-minus">-</button>
+                      
+                      <!-- ইনপুট ফিল্ড -->
+                      <input type="text" value="0" max="100" class="w-12 text-center text-slate-100 font-bold text-sm bg-transparent focus:outline-none qty-input">
+                      
+                      <!-- প্লাস বাটন -->
+                      <button type="button" class="cursor-pointer w-8 h-8 flex items-center justify-center rounded-lg bg-[#d4af37] hover:bg-[#c29f31] text-slate-950 text-sm font-bold shadow-md transition-all btn-plus">+</button>
+                    </div>
+                  {% else %}
+                    <!-- সাধারণ টিক মার্ক (কন্ডিশন ফলস হলে) -->
+                    <div class="w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center bg-[#090a0d]">
+                      <span class="tick-icon bg-[#d4af37] text-xs text-black font-extrabold w-full h-full flex items-center justify-center rounded-full leading-none hidden">✓</span>
+                    </div>
+                  {% endif %}
                 </div>
+
               </div>
               {% endfor %}
 
@@ -113,12 +134,12 @@
 
           <div class="border-t border-slate-800/90 pt-3 mt-3 flex justify-between items-center text-sm sm:text-base font-bold">
             <span class="text-slate-200">Total Amount:</span>
-            <span id="grand-total-price" class="text-lg sm:text-xl font-black text-[#d4af37]">৳০.০০</span>
+            <span id="grand-total-price" class="text-lg sm:text-xl font-black text-[#d4af37]">০.০০</span>
           </div>
         </div>
       </div>
 
-      <!-- Footer Info Sections (Unified Grid Row Layout) -->
+      <!-- Footer Info Sections -->
       <div class="pt-6 border-t border-slate-800">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
           
@@ -223,5 +244,9 @@
 
     </div>
   </div>
+  <script>
+    const viewcarts = "{% url 'add_to_cart' %}"
+    const homepage = "{% url 'shop' %}"
+  </script>
 </main>
 {% endblock %}

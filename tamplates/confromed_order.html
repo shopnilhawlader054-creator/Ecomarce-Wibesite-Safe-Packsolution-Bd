@@ -1,0 +1,99 @@
+{% extends "admin/index.html" %}
+{% load static %} 
+{% block content %} 
+
+<!-- Customer & Order Table Section -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Main Card Container -->
+    <div class="bg-[#12141c] rounded-3xl border border-[#d4af37]/20 shadow-2xl overflow-hidden p-6 sm:p-8">
+        
+        <!-- Table Header Info & "New Customer" Button on Top Right -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 pb-6 border-b border-gray-800">
+            <div>
+                <h2 class="text-xl sm:text-2xl font-black text-white tracking-wide">
+                    <span class="bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent uppercase">
+                        Customer Management
+                    </span>
+                </h2>
+                <p class="text-xs sm:text-sm text-gray-400 mt-1">
+                    সকল কাস্টমার এবং তাদের অর্ডারের তালিকা এক নজরে দেখুন।
+                </p>
+            </div>
+
+            <!-- Top Right "New Customer" Button -->
+            <a href="#" class="bg-gradient-to-r from-[#d4af37] to-[#aa7c11] hover:from-[#e6c555] hover:to-[#bc8b15] text-[#0b0c10] font-bold px-5 py-2.5 rounded-xl shadow-lg transition-all duration-200 text-xs sm:text-sm flex items-center gap-2 transform hover:-translate-y-0.5">
+                <svg class="w-4 h-4 font-bold" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path></svg>
+                New Customer
+            </a>
+        </div>
+
+        <!-- Responsive Table Container -->
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="border-b border-gray-800 text-xs font-bold text-[#d4af37] uppercase tracking-wider bg-[#161820]/60">
+                        <th class="py-4 px-6 rounded-l-xl">Customer Name & Number</th>
+                        <th class="py-4 px-6">Date</th>
+                        <th class="py-4 px-6">Status / Details</th>
+                        <th class="py-4 px-6 text-right rounded-r-xl">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800/60 text-sm text-gray-300">
+                    {% if total_confromed %}
+                        {% for order in total_confromed %}
+                        
+                        <!-- Table Data Row -->
+                        <tr class="hover:bg-[#161820]/40 transition duration-150">
+                            <!-- Customer Name & Number -->
+                            <td class="py-4 px-6 font-semibold text-white flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-[#d4af37]/10 border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] font-bold shrink-0">
+                                    SH
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold">{{order.customer_name}}</div>
+                                    <div class="text-xs text-gray-400 font-normal">+88{{order.phone_number}}</div>
+                                </div>
+                            </td>
+
+                            <!-- Date -->
+                            <td class="py-4 px-6 font-medium text-gray-300">
+                                Oct 06, 2026
+                            </td>
+
+                            <!-- Status Badge -->
+                            <td class="py-4 px-6">
+                                <span class="inline-flex items-center gap-1.5 bg-[#00c885]/10 text-[#00c885] border border-[#00c885]/30 text-xs font-bold px-3 py-1 rounded-full">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[#00c885]"></span> {{order.order_status}}
+                                </span>
+                            </td>
+
+                            <!-- Action Button -->
+                            <td class="py-4 px-6 text-right">
+                                <a href="{% url "order_detals" order.id %}" class="text-[#d4af37] hover:text-white font-semibold text-xs bg-[#d4af37]/10 hover:bg-[#d4af37]/20 border border-[#d4af37]/30 px-3.5 py-2 rounded-xl transition">
+                                    View Details
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <!-- যদি কোনো অর্ডার না থাকে -->
+                        <tr>
+                            <td colspan="4" class="text-center py-12 text-gray-400">
+                                <div class="flex flex-col items-center justify-center gap-2">
+                                    <span class="text-3xl">📦</span>
+                                    <span class="text-base font-semibold text-gray-300">Order Empty</span>
+                                    <p class="text-xs text-gray-500">বর্তমানে কোনো কনফার্মড অর্ডার নেই।</p>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endif %}
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

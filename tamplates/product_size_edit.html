@@ -1,0 +1,89 @@
+{% extends "admin/index.html" %}
+{% load static %} 
+{% block content %} 
+<!-- ================= প্রোডাক্ট সাইজ, দাম ও ওজন যুক্ত করার ফর্ম ================= -->
+<div class="w-full max-w-4xl mx-auto bg-[#121318] border border-[#d4af37]/30 rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] overflow-hidden p-6 md:p-8 my-8">
+    
+    <!-- ফর্ম হেডার -->
+    <div class="flex items-center gap-3 border-b border-[#d4af37]/20 pb-5 mb-6">
+        <div class="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-[#ffe58f] via-[#d4af37] to-[#aa7c11] rounded-xl p-[1.5px] shadow-[0_0_15px_rgba(212,175,55,0.25)]">
+            <div class="w-full h-full bg-[#121318] rounded-[10.5px] flex items-center justify-center">
+                <span class="text-[#d4af37] text-lg font-bold">📏</span>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-lg font-black uppercase tracking-wider bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent">
+                প্রোডাক্ট সাইজ, দাম ও ওজন যুক্ত করুন
+            </h2>
+            <p class="text-xs text-gray-400 font-semibold tracking-widest uppercase mt-0.5">Safe Packaging BD</p>
+        </div>
+    </div>
+
+    <!-- ফর্ম শুরু -->
+    <form method="POST" class="space-y-6">
+        {% csrf_token %}
+        <!-- হিডেন ফিল্ড যা ভিউতে ফর্ম চিনতে সাহায্য করবে -->
+        <input type="hidden" name="form_type" value="size_form">
+
+        <!-- নতুন প্রোডাক্ট ইনফো কার্ড (যেখানে ছবি, নাম এবং স্টক/কোয়ান্টিটি দেখাবে) -->
+        <div class="bg-[#16181f] border border-[#d4af37]/30 rounded-xl p-4 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+                <!-- প্রোডাক্ট ইমেজ -->
+                {% if product %}
+                    <img src="{{ product_sizes.product.product_image.url }}" alt="{{ product_sizes.product.product_name }}" class="w-16 h-16 object-cover rounded-lg border border-[#d4af37]/30">
+                {% else %}
+                    <div class="w-16 h-16 bg-[#121318] border border-[#d4af37]/30 rounded-lg flex items-center justify-center text-gray-400 text-xs">
+                        No Image
+                    </div>
+                {% endif %}
+
+                <!-- প্রোডাক্ট নাম এবং স্টক/কোয়ান্টিটি -->
+                <div>
+                    <h3 class="text-sm font-bold text-gray-200">{{ product.product_name }}</h3>
+                    <p class="text-xs text-[#d4af37] font-semibold mt-1">স্টক/পরিমাণ: {{ product_sizes.product.total_product }} টি</p>
+                </div>
+            </div>
+
+            <!-- হিডেন ইনপুট যাতে ব্যাকএন্ডে প্রোডাক্টের আইডি চলে যায় -->
+            <input type="hidden" name="product" value="{{ size.product.id }}">
+        </div>
+
+        <!-- ১ম সারি: প্রোডাক্ট সাইজ -->
+        <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">প্রোডাক্ট সাইজ</label>
+            <input type="text" name="productsize"  placeholder="{{product_sizes.productsize|default:''}}" maxlength="500" class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-200 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 transition-all">
+        </div>
+
+        <!-- ২য় সারি: দাম এবং ওজন -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- দাম -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">দাম (টাকা)</label>
+                <input type="number" step="0.01" name="price"  placeholder="{{product_sizes.price|default:''}}" required class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-200 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 transition-all">
+            </div>
+
+            <!-- ওজন -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">ওজন (গ্রাম)</label>
+                <input type="number" name="weight"  placeholder="{{product_sizes.weight|default:''}}" required class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-200 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 transition-all">
+            </div>
+        </div>
+
+        <!-- সাবমিট ও ডিলিট বাটন সেকশন -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center gap-4">
+            <!-- সেভ বাটন -->
+            <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-bold text-[#0b0c10] uppercase tracking-wider bg-gradient-to-r from-[#ffe58f] via-[#d4af37] to-[#aa7c11] hover:brightness-110 shadow-[0_4px_20px_rgba(212,175,55,0.3)] transition-all cursor-pointer text-center">
+                সাইজ ও দাম সেভ করুন
+            </button>
+
+            <!-- ডিলিট বাটন -->
+            {% if product %}
+            <a href="{% url 'delet_product' product.id %}" onclick="return confirm('আপনি কি নিশ্চিত এই সাইজ ও দামটি ডিলিট করতে চান?');" class="w-full sm:w-auto py-3.5 px-6 rounded-xl font-bold text-red-400 uppercase tracking-wider bg-red-500/10 border border-red-500/30 hover:bg-red-500/20 transition-all text-center whitespace-nowrap">
+                ডিলিট করুন
+            </a>
+            {% endif %}
+        </div>
+
+    </form>
+</div>
+{% endblock %}

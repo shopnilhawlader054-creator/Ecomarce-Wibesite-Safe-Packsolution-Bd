@@ -9,7 +9,8 @@ def all_products(request):
     polly = Products.objects.filter(category = 'polly')
     tap = Products.objects.filter(category = 'tape')
     babol = Products.objects.filter(Q(category = 'bubble_wrap')|
-                                    Q(category = 'pen')
+                                    Q(category = 'pen')|
+                                    Q(category = 'tape_cutter')
                                     )
     context ={
         'polly':polly,
@@ -34,12 +35,14 @@ def product (request,pk):
         key_features = []
 
     product_size = product.sizes.all()
+    un_qty = ['5 Yards', '10 Yards', '20 Yards', '30 Yards', '40 Yards' ]
 
     context ={
         'product':product,
         'product_size':product_size,
         'subtitle_list':subtitle_list,
-        'key_features':key_features
+        'key_features':key_features,
+        'unqty':un_qty
     }
     print('hitting success')
     return render(request,'product.html',context)
@@ -63,3 +66,5 @@ def Packaging_Machineries_catagory(request):
         'product' :  product_ct 
     }
     return render(request,'catagory.html',context)
+
+

@@ -62,15 +62,15 @@
     <!-- 4. Right Side Actions -->
     <div class="flex items-center gap-3 sm:gap-5 order-3">
       <!-- Cart Icon -->
-      <a href="#" class="p-2.5 border border-[#d4af37]/30 rounded-xl bg-[#16181f] hover:border-[#d4af37] hover:bg-[#d4af37]/10 transition-all relative group">
+      <a href="{% url "add_to_cart" %}"  class="p-2.5 border border-[#d4af37]/30 rounded-xl bg-[#16181f] hover:border-[#d4af37] hover:bg-[#d4af37]/10 transition-all relative group">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#d4af37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
         </svg>
-        <span class="absolute -top-1 -right-1 w-4 h-4 bg-[#ef4444] text-white text-[9px] font-bold rounded-full flex items-center justify-center border border-[#0b0c10]">2</span>
+        <span id='show-add-to-cart-count' class="absolute -top-1 -right-1 w-4 h-4 hidden bg-[#ef4444] text-white text-[9px] font-bold rounded-full flex items-center justify-center border border-[#0b0c10]">2</span>
       </a>
 
       <!-- Login -->
-      <a href="#" class="hidden sm:block text-xs font-bold tracking-widest text-[#d4af37] hover:text-[#ffe58f] uppercase transition-colors">
+      <a href="{% url "logout" %}" class="hidden sm:block text-xs font-bold tracking-widest text-[#d4af37] hover:text-[#ffe58f] uppercase transition-colors">
         Log In
       </a>
 
@@ -149,8 +149,8 @@
   <!-- Bottom Actions Inside Drawer -->
   <div class="pt-6 border-t border-[#d4af37]/20 flex flex-col gap-3">
     <!-- Log In Button -->
-    <a href="#" class="w-full text-center py-2.5 border border-[#d4af37]/40 rounded-xl text-xs font-bold tracking-widest text-[#d4af37] hover:bg-[#d4af37]/10 uppercase transition-colors">
-      Log In
+    <a href="javascript:void(0);" onclick="window.location.href='{% url 'logout' %}';" class="w-full text-center py-2.5 border border-[#d4af37]/40 rounded-xl text-xs font-bold tracking-widest text-[#d4af37] hover:bg-[#d4af37]/10 uppercase transition-colors">
+      shop nil
     </a>
 
     <!-- WhatsApp Button -->

@@ -1,0 +1,98 @@
+{% extends "admin/index.html" %}
+{% load static %} 
+{% block content %} 
+
+<!-- এখানে mx-auto ক্লাসটি যুক্ত করে দেওয়া হয়েছে -->
+<div class="w-full max-w-3xl mx-auto bg-[#121318] border border-[#d4af37]/30 rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] overflow-hidden p-6 md:p-10 my-8">
+        
+        <!-- ফর্ম হেডার -->
+        <div class="flex items-center gap-3 border-b border-[#d4af37]/20 pb-5 mb-8">
+            <div class="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-[#ffe58f] via-[#d4af37] to-[#aa7c11] rounded-xl p-[1.5px] shadow-[0_0_15px_rgba(212,175,55,0.25)]">
+                <div class="w-full h-full bg-[#121318] rounded-[10.5px] flex items-center justify-center">
+                    <span class="text-[#ef4444] text-lg font-bold">📦</span>
+                </div>
+            </div>
+            <div>
+                <h1 class="text-xl font-black uppercase tracking-wider bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent">
+                    নতুন প্রোডাক্ট যুক্ত করুন
+                </h1>
+                <p class="text-xs text-[#ef4444] font-semibold tracking-widest uppercase mt-0.5">Safe Packaging BD Limited</p>
+            </div>
+        </div>
+
+        <!-- জ্যাঙ্গো ফর্ম -->
+        <form method="POST" enctype="multipart/form-data" class="space-y-6">
+            {% csrf_token %}
+
+            <!-- ক্যাটাগরি এবং মোট পণ্যের পরিমাণ (দুটি কলামে) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">ক্যাটাগরি</label>
+                    <select name="category" class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-200 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 transition-all">
+                        <option value="bubble_wrap">বাবল র‍্যাপ</option>
+                        <option value="tape">টেপ</option>
+                        <option value="box">বক্স</option>
+                        <option value="pen">পেন</option>
+                        <option value="tape_cutter">টেপ কাটার</option>
+                        <option value="polly">পলি</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">মোট পণ্যের পরিমাণ (স্টক)</label>
+                    <input type="number" name="total_product" placeholder="যেমন: ১০০" class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-200 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 transition-all">
+                </div>
+            </div>
+
+            <!-- প্রোডাক্টের নাম -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">প্রোডাক্টের নাম</label>
+                <input type="text" name="product_name" placeholder="প্রোডাক্টের পুরো নাম লিখুন..." class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-200 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 transition-all">
+            </div>
+
+            <!-- প্রোডাক্টের ছবি (ফাইল আপলোড) -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">প্রোডাক্টের ছবি</label>
+                <input type="file" name="product_image" class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-400 text-sm rounded-xl px-4 py-2.5 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-[#d4af37] file:text-[#0b0c10] hover:file:bg-[#ffe58f] cursor-pointer transition-all">
+            </div>
+
+            <!-- প্রোডাক্টের বিবরণ -->
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">প্রোডাক্টের বিবরণ</label>
+                <textarea name="Product_Description" rows="3" placeholder="প্রোডাক্টের বিস্তারিত বিবরণ লিখুন..." class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-200 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 transition-all resize-none"></textarea>
+            </div>
+
+            <!-- মূল বৈশিষ্ট্যসমূহ এবং কেন বেছে নেবেন (দুটি কলামে) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">মূল বৈশিষ্ট্যসমূহ</label>
+                    <textarea name="Key_Features" rows="2" placeholder="বৈশিষ্ট্যগুলো উল্লেখ করুন..." class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-200 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 transition-all resize-none"></textarea>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">কেন এই প্রোডাক্টটি বেছে নেবেন</label>
+                    <textarea name="Why_Choose_This_Product" rows="2" placeholder="কারণগুলো লিখুন..." class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-200 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 transition-all resize-none"></textarea>
+                </div>
+            </div>
+
+            <!-- কার জন্য উপযোগী এবং রিফান্ড পলিসি (দুটি কলামে) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">কার জন্য উপযোগী</label>
+                    <input type="text" name="Suitable_For" placeholder="যেমন: ই-কমার্স ব্যবসায়ী" class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-200 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 transition-all">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-[#d4af37] mb-2">রিফান্ড ও এক্সচেঞ্জ পলিসি</label>
+                    <input type="text" name="Refund_Exchange_Policy" placeholder="যেমন: ৭ দিনের গ্যারান্টি" class="w-full bg-[#16181f] border border-[#d4af37]/30 text-gray-200 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-2 focus:ring-[#d4af37]/20 transition-all">
+                </div>
+            </div>
+
+            <!-- সাবমিট বাটন -->
+            <div class="pt-4">
+                <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-bold text-[#0b0c10] uppercase tracking-wider bg-gradient-to-r from-[#ffe58f] via-[#d4af37] to-[#aa7c11] hover:brightness-110 shadow-[0_4px_20px_rgba(212,175,55,0.3)] transition-all cursor-pointer">
+                    প্রোডাক্ট সেভ করুন
+                </button>
+            </div>
+
+        </form>
+
+</div>
+{% endblock %}

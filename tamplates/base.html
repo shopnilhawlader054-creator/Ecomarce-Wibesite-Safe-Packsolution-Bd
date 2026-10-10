@@ -9,8 +9,8 @@
     {% tailwind_css %}
 </head>
 <body class="bg-[#0b0c10] text-gray-100 font-sans antialiased selection:bg-[#d4af37] selection:text-black min-h-screen flex flex-col">
-
-    {% include "navber.html" %}
+{% comment %} 
+    {% include "navber.html" %} {% endcomment %}
   
 
     <main class="flex-grow">
@@ -18,9 +18,9 @@
         {% endblock %}
     </main>
 
-    <footer>
+    {% comment %} <footer>
         {% include "fotter.html" %}
-    </footer>
+    </footer> {% endcomment %}
 
     <script src="{% static 'js/script.js' %}"></script>
 </body>

@@ -32,7 +32,7 @@ class Products(models.Model):
 
 
 class product_size(models.Model):
-    product = models.ForeignKey(Products, on_delete=models.SET_NULL, null=True, blank=True, related_name='sizes', verbose_name="প্রোডাক্ট")
+    product = models.ForeignKey(Products, on_delete=models.CASCADE,related_name='sizes', verbose_name="প্রোডাক্ট")
     productsize = models.CharField(max_length=500, blank=True, null=True, verbose_name="প্রোডাক্ট সাইজ")
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=False, null=False, validators=[MinValueValidator(Decimal('0.01'))], verbose_name="দাম")
     weight = models.PositiveIntegerField(blank=False, verbose_name="ওজন")

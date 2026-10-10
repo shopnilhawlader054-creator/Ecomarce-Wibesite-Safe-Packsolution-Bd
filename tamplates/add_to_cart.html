@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="w-full max-w-full p-3 sm:p-5 md:p-8 bg-[#0b0c10] text-slate-100 font-sans min-h-screen">
+  <div class="max-w-7xl mx-auto space-y-6">
+
+    <!-- Header Section -->
+    <div class="flex items-center gap-3 border-b border-slate-800 pb-4">
+      <a href="#" class="p-2 rounded-xl bg-[#121318] text-slate-400 hover:text-white border border-slate-800 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+      </a>
+      <h1 class="text-xl sm:text-2xl font-black text-white tracking-wide">Cart & Checkout</h1>
+    </div>
+
+    <!-- Main Grid Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+      
+      <!-- Left Column: Cart Table & Items -->
+      <div class="lg:col-span-7 xl:col-span-8 space-y-4">
+        
+        <!-- Select All Box -->
+        <div class="bg-[#121318] rounded-2xl border border-slate-800 p-4 flex justify-between items-center shadow-xl">
+          <label class="flex items-center gap-3 cursor-pointer">
+            <input type="checkbox" class="accent-[#d4af37] w-4 h-4 rounded">
+            <span class="text-xs sm:text-sm font-semibold text-slate-300">Select all (0 selected)</span>
+          </label>
+          <button class="text-xs text-red-400 hover:text-red-300 font-semibold flex items-center gap-1 transition-colors">
+            🗑️ Delete
+          </button>
+        </div>
+
+        <!-- Cart Table Header & Container -->
+        <div class="bg-[#121318] rounded-2xl border border-slate-800 p-5 md:p-6 shadow-xl space-y-4">
+          <div class="grid grid-cols-12 text-xs font-bold text-slate-400 border-b border-slate-800 pb-3 uppercase tracking-wider">
+            <div class="col-span-6">Product</div>
+            <div class="col-span-2 text-center">Price</div>
+            <div class="col-span-2 text-center">Quantity</div>
+            <div class="col-span-2 text-right">Subtotal</div>
+          </div>
+
+          <!-- Cart Items Container (এখানে জাভাস্ক্রিপ্ট দিয়ে ডেটা লোড হবে) -->
+          <div id="card-section" class="space-y-3">
+            <div class="py-12 text-center text-slate-500 text-sm">
+              Your cart is empty.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Order Summary Box -->
+      <div class="lg:col-span-5 xl:col-span-4 space-y-6">
+        <div class="bg-[#121318] rounded-2xl border border-[#d4af37]/30 p-5 md:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.5)] space-y-5 sticky top-6">
+          
+          <h2 class="text-sm sm:text-base font-bold text-[#d4af37] uppercase tracking-wider border-b border-slate-800 pb-3 flex items-center gap-2">
+            🧾 Order Summary
+          </h2>
+
+          <!-- Calculations -->
+          <div class="space-y-3 text-xs sm:text-sm text-slate-300 border-b border-slate-800 pb-4">
+            <div class="flex justify-between">
+              <span class="text-slate-400">Total Weight</span>
+              <span id="addtocard_subtotal" class="font-bold text-slate-100">000</span>
+            </div>
+          </div>
+
+          <!-- Total Amount -->
+          <div class="border-b border-slate-800 pb-4 flex justify-between items-center">
+            <span class="text-sm font-bold text-white">Total</span>
+            <span id="summary-grand-total" class="text-xl sm:text-2xl font-black text-[#d4af37]">0.00 BDT</span>
+          </div>
+
+          <!-- Checkout Button -->
+          <button id="add-to-cart-button" class="w-full bg-[#d4af37] hover:bg-[#e6c553] text-[#0b0c10] font-black text-base py-3.5 px-4 rounded-xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
+            <span>Checkout</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+
+          <!-- Security Footer -->
+          <div class="flex items-center justify-center gap-1.5 text-[11px] text-emerald-400/80 pt-1">
+            <span>🛡️</span>
+            <span>Secure checkout powered by safe Pcking Bd</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script>
+    const chackouturl = "{% url 'order_from' %}"
+  </script>
+</main>
+{% endblock %}

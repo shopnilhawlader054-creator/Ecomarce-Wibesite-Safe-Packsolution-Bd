@@ -8,135 +8,298 @@
 
 
 
+<nav class="bg-[#0b0c10] border-b border-[#d4af37]/20 py-3.5 px-4 md:px-10 shadow-2xl sticky top-0 z-50 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-y-3 gap-x-4 md:gap-x-6">
+    
+    <!-- 1. Left: Premium Logo & Brand Name -->
+    <a href="/" class="flex items-center gap-3.5 group order-1">
+      <!-- Shield Logo Container with Gold Glow -->
+      <div class="relative w-11 h-11 flex items-center justify-center bg-gradient-to-br from-[#ffe58f] via-[#d4af37] to-[#aa7c11] rounded-xl p-[1.5px] shadow-[0_0_15px_rgba(212,175,55,0.25)] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
+        <div class="w-full h-full bg-[#121318] rounded-[10.5px] flex items-center justify-center">
+          <svg class="w-6 h-6 text-[#ef4444] fill-current drop-shadow-[0_2px_8px_rgba(239,68,68,0.5)]" viewBox="0 0 24 24">
+            <path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm0 4l6 3.5v5.5L12 18.5 6 15V9.5L12 6z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Styled Brand Name -->
+      <div class="flex flex-col leading-none">
+        <span class="text-base md:text-xl font-black tracking-widest bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent uppercase drop-shadow-sm">
+          Safe Packaging
+        </span>
+        <span class="text-[10px] md:text-[11px] font-bold tracking-[0.3em] text-[#ef4444] uppercase mt-1 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#ef4444] animate-pulse"></span>
+          BD Limited
+        </span>
+      </div>
+    </a>
+
+    <!-- 2. Middle: Desktop Navigation Links -->
+    <div class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-gray-300 order-2">
+      <a href="{% url "shop" %}" class="hover:text-[#d4af37] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#d4af37] hover:after:w-full after:transition-all">Shop</a>
+      <a href="#" class="hover:text-[#d4af37] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#d4af37] hover:after:w-full after:transition-all">Custom Order</a>
+      <a href="#" class="hover:text-[#d4af37] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#d4af37] hover:after:w-full after:transition-all">Blog</a>
+      
+      <!-- Dropdown -->
+      <div class="dropdown dropdown-hover">
+        <div tabindex="0" role="button" class="flex items-center gap-1.5 hover:text-[#d4af37] cursor-pointer py-1">
+          <span>Categories</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-[#d4af37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-2xl bg-[#121318] border border-[#d4af37]/30 rounded-xl w-56 text-gray-200 mt-2">
+          <li><a class="hover:bg-[#d4af37]/15 hover:text-[#ffe58f] rounded-lg py-2.5">Carton Box</a></li>
+          <li><a class="hover:bg-[#d4af37]/15 hover:text-[#ffe58f] rounded-lg py-2.5">Poly Bag</a></li>
+          <li><a class="hover:bg-[#d4af37]/15 hover:text-[#ffe58f] rounded-lg py-2.5">Packaging Tape</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. Search Bar -->
+    <div class="w-full md:flex-1 md:max-w-xs lg:max-w-md mx-0 md:mx-4 order-last md:order-2">
+      <div class="relative">
+        <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-[#d4af37]">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </span>
+        <input type="text" placeholder="Search premium packaging..." class="w-full bg-[#16181f] border border-[#d4af37]/25 text-gray-100 rounded-full py-2.5 pl-11 pr-4 text-xs tracking-wide focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] transition-all placeholder-gray-500" />
+      </div>
+    </div>
+
+    <!-- 4. Right Side Actions -->
+    <div class="flex items-center gap-3 sm:gap-5 order-3">
+      <!-- Cart Icon -->
+      <a href="{% url "add_to_cart" %}"  class="p-2.5 border border-[#d4af37]/30 rounded-xl bg-[#16181f] hover:border-[#d4af37] hover:bg-[#d4af37]/10 transition-all relative group">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#d4af37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+        <span id='show-add-to-cart-count' class="absolute -top-1 -right-1 w-4 h-4 hidden bg-[#ef4444] text-white text-[9px] font-bold rounded-full flex items-center justify-center border border-[#0b0c10]">2</span>
+      </a>
+
+      <!-- Admin Panel Button (Desktop) -->
+       {% if request.user.is_staff or request.user.is_superuser %} 
+        <a href="{% url 'admin_panel' %}" class="hidden sm:block text-xs font-bold tracking-widest text-[#ffe58f] hover:text-[#d4af37] uppercase transition-colors bg-[#d4af37]/10 px-3 py-1.5 rounded-lg border border-[#d4af37]/30">
+          Admin
+        </a>
+       {% endif %} 
+
+      <!-- Login -->
+      <a href="{% url "logout" %}" class="hidden sm:block text-xs font-bold tracking-widest text-[#d4af37] hover:text-[#ffe58f] uppercase transition-colors">
+        Log In
+      </a>
+
+      <!-- Metallic Red WhatsApp Button -->
+      <a href="https://wa.me/8801700000000" target="_blank" class="hidden sm:flex bg-gradient-to-r from-[#dc2626] to-[#991b1b] hover:from-[#b91c1c] hover:to-[#7f1d1d] text-white text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-full items-center gap-2 shadow-[0_4px_15px_rgba(220,38,38,0.3)] border border-red-500/30 transition-all">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current text-white" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+
+      <!-- Hamburger Button (Mobile Only) -->
+      <button onclick="toggleMenu(event)"  class="lg:hidden p-2 text-[#d4af37] hover:text-[#ffe58f] focus:outline-none transition-colors cursor-pointer" >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Mobile Drawer Backdrop Overlay -->
+<div onclick="toggleMenu(event)" id="mobile-menu-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0"></div>
+
+<!-- Mobile Left Off-Canvas Drawer Sidebar -->
+<aside onclick="toggleMenu(event)" id="mobile-menu-drawer" class="fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-[#0b0c10] border-r border-[#d4af37]/30 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out p-6 flex flex-col justify-between overflow-y-auto shadow-2xl">
+  
+  <div>
+    <!-- Drawer Header: Logo & Close Button -->
+    <div class="flex items-center justify-between pb-6 border-b border-[#d4af37]/20">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 flex items-center justify-center bg-gradient-to-br from-[#ffe58f] via-[#d4af37] to-[#aa7c11] rounded-lg p-[1px]">
+          <div class="w-full h-full bg-[#121318] rounded-[7px] flex items-center justify-center">
+            <svg class="w-5 h-5 text-[#ef4444] fill-current" viewBox="0 0 24 24">
+              <path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3zm0 4l6 3.5v5.5L12 18.5 6 15V9.5L12 6z"/>
+            </svg>
+          </div>
+        </div>
+        <span class="text-sm font-black tracking-widest bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent uppercase">
+          Safe Packaging
+        </span>
+      </div>
+
+      <!-- Close Icon Button -->
+      <button id="menu-close-btn" class="p-2 text-gray-400 hover:text-[#ef4444] transition-colors cursor-pointer" aria-label="Close Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="mt-6 flex flex-col gap-3 text-sm font-semibold uppercase tracking-wider text-gray-200">
+      <a href="#" class="py-2.5 px-3 rounded-lg hover:bg-[#d4af37]/10 hover:text-[#d4af37] transition-all">Shop</a>
+      <a href="#" class="py-2.5 px-3 rounded-lg hover:bg-[#d4af37]/10 hover:text-[#d4af37] transition-all">Custom Order</a>
+      <a href="#" class="py-2.5 px-3 rounded-lg hover:bg-[#d4af37]/10 hover:text-[#d4af37] transition-all">Blog</a>
+
+      <!-- Collapsible Categories Accordion -->
+      <details class="group py-1 px-3">
+        <summary class="flex items-center justify-between cursor-pointer list-none py-1 hover:text-[#d4af37] transition-colors">
+          <span>Categories</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#d4af37] transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <ul class="mt-2 pl-4 flex flex-col gap-2 border-l border-[#d4af37]/20 text-xs text-gray-400">
+          <li><a href="#" class="block py-1.5 hover:text-[#ffe58f] transition-colors">Carton Box</a></li>
+          <li><a href="#" class="block py-1.5 hover:text-[#ffe58f] transition-colors">Poly Bag</a></li>
+          <li><a href="#" class="block py-1.5 hover:text-[#ffe58f] transition-colors">Packaging Tape</a></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+
+  <!-- Bottom Actions Inside Drawer -->
+  <div class="pt-6 border-t border-[#d4af37]/20 flex flex-col gap-3">
+    
+    <!-- Admin Panel Button (Mobile Drawer) -->
+    {% if request.user.is_staff or request.user.is_superuser %}
+      <a href="{% url 'admin_panel' %}" class="w-full text-center py-2.5 border border-[#d4af37]/30 rounded-xl text-xs font-bold tracking-widest text-[#ffe58f] bg-[#d4af37]/10 uppercase transition-colors">
+        Admin Panel
+      </a>
+    {% endif %}
+
+    <!-- Log In Button -->
+    <a href="{% url "logout" %}" class="w-full text-center py-2.5 border border-[#d4af37]/40 rounded-xl text-xs font-bold tracking-widest text-[#d4af37] hover:bg-[#d4af37]/10 uppercase transition-colors">
+      Log In
+    </a>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/8801700000000" target="_blank" class="w-full bg-gradient-to-r from-[#dc2626] to-[#991b1b] text-white text-xs font-bold tracking-wider uppercase py-2.5 rounded-xl flex items-center justify-center gap-2 shadow-lg border border-red-500/30">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-current text-white" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+
+</aside>
 
 
 
 
 
 
-<!-- Hero Section -->
-<section class="bg-[#0b0c10] text-white py-6 sm:py-8 md:py-16 px-3 sm:px-6 md:px-10 overflow-hidden relative border-b border-[#d4af37]/20">
-  <!-- Subtle Background Gold Glow Elements -->
+<section class="bg-[#0b0c10] text-white py-6 sm:py-8 md:py-16 px-3 sm:px-6 md:px-10 overflow-hidden relative border-b border-[#d4af37]/25">
+  
+  <!-- Background Glow Elements -->
   <div class="absolute -top-24 -left-24 w-48 sm:w-72 md:w-96 h-48 sm:h-72 md:h-96 bg-[#d4af37]/10 rounded-full blur-3xl pointer-events-none"></div>
   <div class="absolute -bottom-24 -right-24 w-48 sm:w-72 md:w-96 h-48 sm:h-72 md:h-96 bg-[#ef4444]/10 rounded-full blur-3xl pointer-events-none"></div>
 
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center relative z-10">
+  <div class="max-w-7xl mx-auto relative z-10 overflow-hidden">
     
-    <!-- Left Content Column (7 cols) -->
-    <div class="lg:col-span-7 space-y-4 md:space-y-6 text-center lg:text-left">
+    <!-- Slider Wrapper -->
+    <div id="hero-slider" class="flex transition-transform duration-700 ease-in-out">
       
-      <!-- Brand Tagline Badge -->
-      <div class="inline-flex items-center gap-2 bg-[#16181f] border border-[#d4af37]/30 px-3 py-1 md:px-4 md:py-1.5 rounded-full shadow-lg max-w-max mx-auto lg:mx-0">
-        <span class="w-2 h-2 rounded-full bg-[#ef4444] animate-ping shrink-0"></span>
-        <span class="text-[11px] xs:text-xs md:text-sm font-semibold text-[#d4af37] tracking-wider whitespace-nowrap">
-          প্যাকেজিং এর সহজ সমাধান
-        </span>
-      </div>
-
-      <!-- Main Headline / Brand Name -->
-      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-wide leading-tight">
-        <span class="bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent uppercase drop-shadow-md">
-          Safe Packaging
-        </span>
-        <span class="text-[#ef4444] ml-1 sm:ml-2 uppercase">BD</span>
-      </h1>
-
-      <!-- Secondary Bengali Subtitle -->
-      <p class="text-base sm:text-xl md:text-2xl text-gray-300 font-medium leading-relaxed">
-        প্রয়োজন থেকে পছন্দ <span class="text-[#d4af37] font-bold">সবই পাবেন এখানে</span>
-      </p>
-
-      <!-- CTA Buttons & Website Link -->
-      <div class="pt-2 md:pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 md:gap-4 w-full">
-        <!-- Main Red Website Button -->
-        <a href="https://www.SafePackagingBD.com" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-[#dc2626] to-[#991b1b] hover:from-[#b91c1c] hover:to-[#7f1d1d] text-white font-bold text-xs md:text-sm tracking-widest uppercase px-5 py-3 md:px-8 md:py-4 rounded-full shadow-[0_4px_20px_rgba(239,68,68,0.4)] border border-red-500/40 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m-9 9a9 9 0 019-9" />
-          </svg>
-          <span class="truncate">www.SafePackagingBD.com</span>
-        </a>
-
-        <!-- Order Button -->
-        <a href="#" class="w-full sm:w-auto bg-[#16181f] hover:bg-[#d4af37]/10 text-[#d4af37] border border-[#d4af37]/40 font-bold text-xs md:text-sm tracking-wider uppercase px-6 py-3 md:px-8 md:py-4 rounded-full transition-all text-center">
-          অর্ডার করুন
-        </a>
-      </div>
-
-    </div>
-
-    <!-- Right Visual Column / Custom Poly Service Frame (5 cols) -->
-    <div class="lg:col-span-5 flex justify-center lg:justify-end relative py-2 md:py-6 w-full">
-      <!-- Dynamic Glow Background Effect -->
-      <div class="absolute -top-4 -bottom-4 w-full sm:w-72 md:w-[480px] bg-gradient-to-tr from-[#ef4444]/20 via-[#d4af37]/20 to-transparent blur-2xl rounded-full -z-10"></div>
-      
-      <!-- Widened Card Layout -->
-      <div class="bg-[#0f1015]/90 border border-[#d4af37]/30 rounded-2xl md:rounded-3xl p-3.5 sm:p-5 md:p-6 shadow-[0_15px_45px_rgba(0,0,0,0.4)] relative w-full max-w-2xl backdrop-blur-sm transition-all duration-300 hover:border-[#d4af37]/60">
+      <!-- ================= SLIDE 1: Custom Poly Service ================= -->
+      <div class="w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+        <div class="lg:col-span-7 space-y-4 md:space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-[#16181f] border border-[#d4af37]/30 px-3 py-1 md:px-4 md:py-1.5 rounded-full shadow-lg max-w-max mx-auto lg:mx-0">
+            <span class="w-2 h-2 rounded-full bg-[#ef4444] animate-ping shrink-0"></span>
+            <span class="text-[11px] xs:text-xs md:text-sm font-semibold text-[#d4af37] tracking-wider uppercase">প্যাকেজিং এর সহজ সমাধান</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-wide leading-tight">
+            <span class="bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent uppercase">Safe Packaging</span>
+            <span class="text-[#ef4444] ml-1 sm:ml-2 uppercase">BD</span>
+          </h1>
+          <p class="text-base sm:text-xl md:text-2xl text-gray-300 font-medium leading-relaxed">
+            প্রয়োজন থেকে পছন্দ <span class="text-[#d4af37] font-bold">সবই পাবেন এখানে</span>
+          </p>
+          <div class="pt-2 flex justify-center lg:justify-start gap-3">
+            <a href="https://www.SafePackagingBD.com" target="_blank" class="bg-gradient-to-r from-[#dc2626] to-[#991b1b] text-white font-bold text-xs md:text-sm tracking-widest uppercase px-6 py-3.5 rounded-full shadow-lg">ওয়েবসাইট ভিজিট করুন</a>
+          </div>
+        </div>
         
-        <!-- Top Header Bar -->
-        <div class="flex items-center justify-between border-b border-gray-800/80 pb-2.5 md:pb-3 mb-3 md:mb-4 gap-2">
-          <div class="flex items-center gap-2 md:gap-3">
-            <span class="relative flex h-2 w-2 md:h-2.5 md:w-2.5 shrink-0">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4af37] opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 md:h-2.5 md:w-2.5 bg-[#d4af37]"></span>
-            </span>
-            <span class="text-[10px] sm:text-xs font-semibold tracking-widest text-gray-200 uppercase truncate">Custom Poly Service</span>
+        <!-- Right Card -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end w-full">
+          <div class="bg-[#0f1015]/90 border border-[#d4af37]/30 rounded-2xl md:rounded-3xl p-5 shadow-xl w-full max-w-2xl">
+            <div class="flex items-center justify-between border-b border-gray-800 pb-3 mb-3">
+              <span class="text-xs font-semibold text-gray-200 uppercase">Custom Poly Service</span>
+              <span class="text-[10px] font-mono bg-[#d4af37]/10 text-[#d4af37] px-2 py-0.5 rounded-full border border-[#d4af37]/30">Slide 1/3</span>
+            </div>
+            <div class="space-y-3 text-left">
+              <div class="bg-[#161820] border border-gray-800 rounded-xl p-3">
+                <h4 class="text-sm font-bold text-gray-100">যে কোনো সাইজ ও কাস্টম ডিজাইন</h4>
+                <p class="text-xs text-gray-400 mt-0.5">আপনার ব্র্যান্ডের প্রয়োজন অনুযায়ী মাপে তৈরি</p>
+              </div>
+              <div class="bg-[#161820] border border-gray-800 rounded-xl p-3">
+                <h4 class="text-sm font-bold text-gray-100">উন্নত মানের লোগো প্রিন্টিং</h4>
+                <p class="text-xs text-gray-400 mt-0.5">হাই-কোয়ালিটি কালার প্রিন্ট গ্যারান্টি</p>
+              </div>
+            </div>
           </div>
-          <span class="text-[9px] sm:text-[10px] font-mono bg-[#d4af37]/10 text-[#d4af37] px-2 py-0.5 rounded-full border border-[#d4af37]/30 shrink-0"> Custom Print </span>
         </div>
-
-        <!-- Service Features Container -->
-        <div class="space-y-2.5 sm:space-y-3">
-          
-          <!-- Feature Item 1: Custom Size & Design -->
-          <div class="bg-[#161820] border border-gray-800/90 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5 sm:gap-3">
-            <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#d4af37]/10 border border-[#d4af37]/30 rounded-lg flex items-center justify-center text-[#d4af37] shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-              </svg>
-            </div>
-            <div class="text-left min-w-0">
-              <h4 class="text-xs sm:text-sm font-bold text-gray-100 truncate">যে কোনো সাইজ ও কাস্টম ডিজাইন</h4>
-              <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">আপনার ব্র্যান্ডের প্রয়োজন অনুযায়ী যে কোনো মাপে তৈরি করা হয়</p>
-            </div>
-          </div>
-
-          <!-- Feature Item 2: Logo Print -->
-          <div class="bg-[#161820] border border-gray-800/90 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5 sm:gap-3">
-            <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#ef4444]/10 border border-[#ef4444]/30 rounded-lg flex items-center justify-center text-[#ef4444] shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-              </svg>
-            </div>
-            <div class="text-left min-w-0">
-              <h4 class="text-xs sm:text-sm font-bold text-gray-100 truncate">উন্নত মানের লোগো প্রিন্টিং</h4>
-              <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">হাই-কোয়ালিটি কালার প্রিন্টে নিজের ব্র্যান্ড ফুটিয়ে তুলুন</p>
-            </div>
-          </div>
-
-          <!-- Feature Item 3: Quality Material -->
-          <div class="bg-[#161820] border border-gray-800/90 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5 sm:gap-3">
-            <div class="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-[#00c885]/10 border border-[#00c885]/30 rounded-lg flex items-center justify-center text-[#00c885] shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </div>
-            <div class="text-left min-w-0">
-              <h4 class="text-xs sm:text-sm font-bold text-gray-100 truncate">মজবুত ও প্রিমিয়াম মেটেরিয়াল</h4>
-              <p class="text-[10px] sm:text-xs text-gray-400 mt-0.5 leading-snug">দীর্ঘস্থায়ী এবং নিরাপদ প্যাকেজিং সুবিধা</p>
-            </div>
-          </div>
-
-          <!-- CTA Button -->
-          <button class="w-full mt-1 bg-gradient-to-r from-[#d4af37] via-[#b89528] to-[#aa7c11] text-black font-extrabold text-xs md:text-sm tracking-wider uppercase px-4 py-2.5 sm:py-3 rounded-xl shadow-lg hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(212,175,55,0.3)] transition-all flex items-center justify-center gap-2 group">
-            <span>কাস্টমাইজড পলি তৈরি করুন</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </button>
-
-        </div>
-
       </div>
+
+      <!-- ================= SLIDE 2: Cash On Delivery ================= -->
+      <div class="w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+        <div class="lg:col-span-7 space-y-4 md:space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-[#16181f] border border-blue-500/40 px-3 py-1 md:px-4 md:py-1.5 rounded-full shadow-lg max-w-max mx-auto lg:mx-0">
+            <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping shrink-0"></span>
+            <span class="text-[11px] xs:text-xs md:text-sm font-semibold text-blue-400 tracking-wider uppercase">১০০% ক্যাশ অন ডেলিভারি</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-wide leading-tight">
+            <span class="text-white uppercase">প্যাকেট খুলে</span>
+            <span class="text-blue-400 ml-1 sm:ml-2 uppercase">দেখে পেমেন্ট</span>
+          </h1>
+          <p class="text-base sm:text-xl md:text-2xl text-gray-300 font-medium leading-relaxed">
+            ১ টাকাও অগ্রিম নয়, সারাদেশে <span class="text-blue-400 font-bold">দ্রুততম হোম ডেলিভারি</span>
+          </p>
+          <div class="pt-2 flex justify-center lg:justify-start">
+            <a href="#order" class="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold text-xs md:text-sm tracking-widest uppercase px-8 py-4 rounded-full shadow-lg">অর্ডার করুন</a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center lg:justify-end w-full">
+          <div class="bg-[#0f1015]/90 border border-blue-500/30 rounded-2xl md:rounded-3xl p-5 shadow-xl w-full max-w-2xl text-center">
+            <div class="text-5xl mb-3">🚚</div>
+            <h3 class="text-lg font-black text-white">সারাদেশে কুরিয়ার সার্ভিস</h3>
+            <p class="text-xs text-gray-400 mt-1">আপনার ঠিকানায় খুব দ্রুত পার্সেল পৌঁছে দেওয়া হয়।</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 3: Bulk Order / Wholesale ================= -->
+      <div class="w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+        <div class="lg:col-span-7 space-y-4 md:space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-[#16181f] border border-[#d4af37]/40 px-3 py-1 md:px-4 md:py-1.5 rounded-full shadow-lg max-w-max mx-auto lg:mx-0">
+            <span class="w-2 h-2 rounded-full bg-[#d4af37] animate-ping shrink-0"></span>
+            <span class="text-[11px] xs:text-xs md:text-sm font-semibold text-[#d4af37] tracking-wider uppercase">পাইকারি সরবরাহ</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-wide leading-tight">
+            <span class="bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent uppercase">বাল্ক অর্ডার</span>
+            <span class="text-white ml-1 sm:ml-2 uppercase">স্পেশাল ছাড়</span>
+          </h1>
+          <p class="text-base sm:text-xl md:text-2xl text-gray-300 font-medium leading-relaxed">
+            অধিক পরিমাণে পলি ক্রয়ে <span class="text-[#d4af37] font-bold">বিশেষ পাইকারি মূল্য</span> উপভোগ করুন
+          </p>
+          <div class="pt-2 flex justify-center lg:justify-start">
+            <a href="#order" class="bg-gradient-to-r from-[#d4af37] to-[#aa7c11] text-black font-extrabold text-xs md:text-sm tracking-widest uppercase px-8 py-4 rounded-full shadow-lg">রেট জেনে নিন</a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center lg:justify-end w-full">
+          <div class="bg-[#0f1015]/90 border border-[#d4af37]/30 rounded-2xl md:rounded-3xl p-5 shadow-xl w-full max-w-2xl text-center">
+            <div class="text-5xl mb-3">📦</div>
+            <h3 class="text-lg font-black text-white">ব্যাবসায়িক পার্সেল</h3>
+            <p class="text-xs text-gray-400 mt-1">ব্যাবসায়িক প্রতিষ্ঠানের জন্য সর্বনিম্নে সেরা মানের পলি।</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -415,4 +578,92 @@
 
   </div>
 </section>
+
+
+
+<!-- Footer Section -->
+<footer class="bg-[#0b0c10] text-gray-300 relative overflow-hidden border-t border-[#d4af37]/20 pt-12 pb-6 px-4 md:px-10">
+  
+  <!-- Subtle Glow Effect -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-gradient-to-r from-[#d4af37]/10 via-[#ef4444]/10 to-[#d4af37]/10 blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+      
+      <!-- Column 1: Brand Info -->
+      <div class="space-y-4 text-center sm:text-left">
+        <!-- Logo / Brand Name -->
+        <h2 class="text-2xl md:text-3xl font-black tracking-wide">
+          <span class="bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent uppercase">
+            Safe Packaging
+          </span>
+          <span class="text-[#ef4444] ml-1 uppercase">BD</span>
+        </h2>
+        <p class="text-xs md:text-sm text-gray-400 leading-relaxed">
+          আপনার ব্র্যান্ডের বিশ্বস্ত প্যাকেজিং পার্টনার। যে কোনো সাইজ ও কাস্টমাইজড পলি প্রিন্টিং এর সেরা সমাধান পাবেন এখানে।
+        </p>
+
+        <!-- Social Links -->
+        <div class="flex items-center justify-center sm:justify-start gap-3 pt-2">
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/profile.php?id=61583113057647" class="w-9 h-9 rounded-full bg-[#161820] border border-gray-800 flex items-center justify-center text-gray-300 hover:text-[#d4af37] hover:border-[#d4af37]/50 transition-all">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <!-- WhatsApp -->
+          <a href="https://wa.me/message/NSLBSESY4WN3I1" class="w-9 h-9 rounded-full bg-[#161820] border border-gray-800 flex items-center justify-center text-gray-300 hover:text-[#00c885] hover:border-[#00c885]/50 transition-all">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          </a>
+          <!-- Phone/Call -->
+          <a href="tel:+8801635884414" class="w-9 h-9 rounded-full bg-[#161820] border border-gray-800 flex items-center justify-center text-gray-300 hover:text-[#ef4444] hover:border-[#ef4444]/50 transition-all">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="space-y-3 text-center sm:text-left">
+        <h3 class="text-sm font-bold text-gray-100 uppercase tracking-wider text-[#d4af37]">কুইক লিংক</h3>
+        <ul class="space-y-2 text-xs md:text-sm">
+          <li><a href="#" class="hover:text-[#d4af37] transition-colors">হোম পেজ</a></li>
+          <li><a href="#" class="hover:text-[#d4af37] transition-colors">আমাদের প্রোডাক্টস</a></li>
+          <li><a href="#" class="hover:text-[#d4af37] transition-colors">কাস্টম পলি প্রিন্টিং</a></li>
+          <li><a href="#" class="hover:text-[#d4af37] transition-colors">প্রাইসিং ও অর্ডার</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Services -->
+      <div class="space-y-3 text-center sm:text-left">
+        <h3 class="text-sm font-bold text-gray-100 uppercase tracking-wider text-[#d4af37]">সার্ভিসসমূহ</h3>
+        <ul class="space-y-2 text-xs md:text-sm">
+          <li><a href="#" class="hover:text-[#d4af37] transition-colors">গার্মেন্টস পলি ব্যাগ</a></li>
+          <li><a href="#" class="hover:text-[#d4af37] transition-colors">শপিং ও জিপলক ব্যাগ</a></li>
+          <li><a href="#" class="hover:text-[#d4af37] transition-colors">ব্র্যান্ড লোগো প্রিন্টিং</a></li>
+          <li><a href="#" class="hover:text-[#d4af37] transition-colors">জরুরি ডেলিভারি সেবা</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact Info -->
+      <div class="space-y-3 text-center sm:text-left">
+        <h3 class="text-sm font-bold text-gray-100 uppercase tracking-wider text-[#d4af37]">যোগাযোগ করুন</h3>
+        <ul class="space-y-2.5 text-xs md:text-sm text-gray-400">
+          <li class="flex items-center justify-center sm:justify-start gap-2">
+            <svg class="w-4 h-4 text-[#ef4444] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <span>ঢাকা, বাংলাদেশ</span>
+          </li>
+          <li class="flex items-center justify-center sm:justify-start gap-2">
+            <svg class="w-4 h-4 text-[#d4af37] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <span>+8801635884414</span>
+          </li>
+          <li class="flex items-center justify-center sm:justify-start gap-2">
+            <svg class="w-4 h-4 text-[#00c885] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span class="truncate">arafathossainbhuiyan14@gmail.com</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+ 
+</footer>
+
 {% endblock  %}

@@ -1,0 +1,79 @@
+{% extends "admin/index.html" %}
+{% load static %} 
+{% block content %} 
+
+<!-- ================= প্যারেন্ট কন্টেইনার (সেন্টার ও ২ কলাম লেআউট) ================= -->
+<div class="w-full flex justify-center items-center my-8 px-4">
+    <div class="w-full max-w-4xl">
+        
+        <!-- ৪টি কার্ডের গ্রিড (প্রতি সারিতে ২টি করে কার্ড) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Card 1: Total Orders (Link to Orders Page) -->
+            <a href="{% url 'all_product' %}" class="bg-[#121318] border border-[#d4af37]/30 rounded-2xl p-6 shadow-[0_15px_30px_-10px_rgba(0,0,0,0.7)] hover:border-[#d4af37]/60 hover:-translate-y-1 transition-all group block">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-[#d4af37] transition-colors">Total Orders</span>
+                    <div class="w-10 h-10 flex items-center justify-center bg-[#d4af37]/10 border border-[#d4af37]/30 rounded-xl text-lg shadow-inner">
+                        📦
+                    </div>
+                </div>
+                <div class="flex items-baseline gap-2">
+                    <h3 class="text-3xl font-black text-white tracking-tight">{{ total_order }}</h3>
+                    <span class="text-xs font-semibold text-[#d4af37]">টি অর্ডার</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">সর্বমোট প্রাপ্ত অর্ডার</p>
+            </a>
+
+            <!-- Card 2: Pending Orders (Link to Pending Orders Page) -->
+            <a href="{% url 'order_pending' %}" class="bg-[#121318] border border-yellow-500/40 rounded-2xl p-6 shadow-[0_15px_30px_-10px_rgba(0,0,0,0.7)] hover:border-yellow-500/80 hover:-translate-y-1 transition-all group relative overflow-hidden block">
+                <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-yellow-500/5 rounded-full blur-xl pointer-events-none"></div>
+                
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-bold uppercase tracking-widest text-yellow-500/90">Pending Orders</span>
+                    <div class="w-10 h-10 flex items-center justify-center bg-yellow-500/10 border border-yellow-500/30 rounded-xl text-lg shadow-inner">
+                        ⏳
+                    </div>
+                </div>
+                <div class="flex items-baseline gap-2">
+                    <h3 class="text-3xl font-black text-yellow-400 tracking-tight">{{ total_pending }}</h3>
+                    <span class="text-xs font-semibold text-yellow-500">অপেক্ষমাণ</span>
+                </div>
+                <p class="text-xs text-gray-400 mt-1">কনফার্ম করার বাকি আছে</p>
+            </a>
+
+            <!-- Card 3: Confirmed Orders (Link to Confirmed Orders Page) -->
+            <a href="{% url 'order_confromed' %}" class="bg-[#121318] border border-emerald-500/30 rounded-2xl p-6 shadow-[0_15px_30px_-10px_rgba(0,0,0,0.7)] hover:border-emerald-500/60 hover:-translate-y-1 transition-all group block">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-400/90">Confirmed Orders</span>
+                    <div class="w-10 h-10 flex items-center justify-center bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-lg shadow-inner">
+                        ✅
+                    </div>
+                </div>
+                <div class="flex items-baseline gap-2">
+                    <h3 class="text-3xl font-black text-white tracking-tight">{{ total_confromed }}</h3>
+                    <span class="text-xs font-semibold text-emerald-400">কনফার্মড</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">১৫ দিন পর স্বয়ংক্রিয় ক্লিন</p>
+            </a>
+
+            <!-- Card 4: Total Products (Link to Products List Page) -->
+            <a href="{% url 'all_product' %}" class="bg-[#121318] border border-[#d4af37]/30 rounded-2xl p-6 shadow-[0_15px_30px_-10px_rgba(0,0,0,0.7)] hover:border-[#d4af37]/60 hover:-translate-y-1 transition-all group block">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-[#d4af37] transition-colors">Total Products</span>
+                    <div class="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-[#ffe58f] via-[#d4af37] to-[#aa7c11] rounded-xl p-[1px] shadow-inner">
+                        <div class="w-full h-full bg-[#121318] rounded-[11px] flex items-center justify-center">
+                            <span class="text-sm">🏷️</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-baseline gap-2">
+                    <h3 class="text-3xl font-black text-white tracking-tight">{{ total_product }}</h3>
+                    <span class="text-xs font-semibold text-[#d4af37]">টি প্রোডাক্ট</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">ওয়েবসাইটে লাইভ আছে</p>
+            </a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

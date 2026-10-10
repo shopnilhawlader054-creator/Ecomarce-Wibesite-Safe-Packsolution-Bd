@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center px-4 py-12">
+    <div class="max-w-md w-full bg-[#161820] border border-gray-800/90 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+      
+      <!-- গোল্ডেন গ্লো ইফেক্ট -->
+      <div class="absolute -top-24 -right-24 w-48 h-48 bg-[#d4af37]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- হেডিং অংশ -->
+      <div class="text-center mb-8 relative z-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#d4af37] uppercase tracking-wider inline-block border-b-2 border-[#d4af37]/40 pb-2">
+          Welcome Back
+        </h2>
+        <p class="text-xs text-gray-400 mt-2">Login to your account to continue shopping</p>
+      </div>
+
+      <!-- লগইন ফর্ম -->
+      <form action="#" method="POST" class="space-y-4 relative z-10">
+        {% csrf_token %}
+        <!-- Username Field -->
+        <div>
+          <label class="block text-xs font-bold text-gray-300 uppercase tracking-wide mb-1.5">
+            Username
+          </label>
+          <input type="text" name="username" placeholder="Enter your username" required
+            class="w-full bg-[#121318] text-white border border-gray-800 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-[#d4af37] transition-colors">
+        </div>
+
+        <!-- Password Field -->
+        <div>
+          <label class="block text-xs font-bold text-gray-300 uppercase tracking-wide mb-1.5">
+            Password
+          </label>
+          <input type="password" name="password" placeholder="Enter your password" required
+            class="w-full bg-[#121318] text-white border border-gray-800 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-[#d4af37] transition-colors">
+        </div>
+
+        <!-- Remember Me & Forgot Password -->
+        <div class="flex items-center justify-between text-xs text-gray-400 pt-1">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" name="remember" class="accent-[#d4af37] rounded bg-[#121318] border-gray-800">
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="hover:text-[#d4af37] transition-colors">Forgot password?</a>
+        </div>
+
+        <!-- সাবমিট বাটন -->
+        <button type="submit" class="w-full mt-6 bg-[#d4af37] hover:bg-[#b8972b] text-black font-extrabold text-sm py-3 rounded-xl transition-all duration-300 shadow-lg tracking-wide uppercase flex items-center justify-center gap-2 cursor-pointer">
+          <span>Login</span>
+        </button>
+      </form>
+
+      <!-- রেজিস্টার পেজে যাওয়ার লিংক -->
+      <div class="text-center mt-6 relative z-10">
+        <p class="text-xs text-gray-400">
+          Don't have an account? 
+          <a href="{% url "register" %}" class="text-[#d4af37] hover:underline font-bold ml-1 transition-colors">Register here</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+{% endblock  %}

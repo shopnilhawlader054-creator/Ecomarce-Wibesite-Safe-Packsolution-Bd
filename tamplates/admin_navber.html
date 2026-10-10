@@ -1,0 +1,104 @@
+<header class="bg-[#0b0c10] border-b border-[#d4af37]/20 py-4 px-6 md:px-12 flex items-center justify-between relative z-50">
+    <div class="flex items-center gap-3">
+        <div class="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-[#ffe58f] via-[#d4af37] to-[#aa7c11] rounded-xl p-[1.5px] shadow-[0_0_15px_rgba(212,175,55,0.25)]">
+            <div class="w-full h-full bg-[#121318] rounded-[10.5px] flex items-center justify-center">
+                <span class="text-[#ef4444] text-lg font-bold">📦</span>
+            </div>
+        </div>
+        <div>
+            <span class="text-base font-black tracking-widest bg-gradient-to-r from-[#fff3b0] via-[#d4af37] to-[#aa7c11] bg-clip-text text-transparent uppercase block">
+                Safe Packaging BD
+            </span>
+            <span class="text-[10px] font-bold tracking-[0.2em] text-[#ef4444] uppercase">Order Details</span>
+        </div>
+    </div>
+    
+    <!-- ডেক্সটপ বাটনগুলো (বড় স্ক্রিনে দেখাবে) -->
+    <div class="hidden md:flex items-center gap-3 flex-wrap">
+        <!-- All Product বাটন -->
+        <a href="{% url 'all_product' %}" class="text-xs font-bold text-[#d4af37] border border-[#d4af37]/30 px-4 py-2 rounded-xl hover:bg-[#d4af37]/10 transition-all">
+            🛍️ All Product
+        </a>
+
+        <!-- Add Size বাটন -->
+        <a href="#" class="text-xs font-bold text-[#d4af37] border border-[#d4af37]/30 px-4 py-2 rounded-xl hover:bg-[#d4af37]/10 transition-all">
+            📏 Add Size
+        </a>
+
+        <!-- All Orders বাটন -->
+        <a href="{% url 'all_customer' %}" class="text-xs font-bold text-[#d4af37] border border-[#d4af37]/30 px-4 py-2 rounded-xl hover:bg-[#d4af37]/10 transition-all">
+            📋 All Orders
+        </a>
+        
+        <!-- ড্যাশবোর্ডে ফিরে যান বাটন -->
+        <a href="{% url 'admin_panel' %}" class="text-xs font-bold text-[#0b0c10] bg-gradient-to-r from-[#ffe58f] via-[#d4af37] to-[#aa7c11] px-4 py-2 rounded-xl hover:brightness-110 transition-all">
+            ← ড্যাশবোর্ডে ফিরে যান
+        </a>
+    </div>
+
+    <!-- মোবাইল হ্যামবার্গার বাটন (ছোট স্ক্রিনে দেখাবে) -->
+    <div class="md:hidden flex items-center">
+        <button id="menu-btn" class="w-10 h-10 flex items-center justify-center bg-[#16181f] border border-[#d4af37]/30 rounded-xl text-[#d4af37] hover:bg-[#d4af37]/10 transition-all focus:outline-none cursor-pointer">
+            <span id="menu-icon" class="text-xl font-bold">☰</span>
+        </button>
+    </div>
+
+    <!-- ব্যাকগ্রাউন্ড ওভারলে (মেনু ওপেন হলে পিছনের স্ক্রিন একটু অন্ধকার হবে) -->
+    <div id="menu-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 hidden transition-opacity opacity-0 md:hidden"></div>
+
+    <!-- ডানপাশ থেকে স্লাইড হয়ে আসা মোবাইল ড্রয়ার মেনু -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-[280px] bg-[#121318] border-l border-[#d4af37]/30 p-6 flex flex-col gap-4 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        
+        <!-- ড্রয়ার হেডার ও ক্লোজ বাটন -->
+        <div class="flex items-center justify-between border-b border-[#d4af37]/20 pb-4 mb-2">
+            <span class="text-xs font-black uppercase tracking-widest text-[#d4af37]">মেনু অপশন</span>
+            <button id="close-btn" class="w-8 h-8 flex items-center justify-center bg-[#16181f] border border-red-500/30 rounded-lg text-red-400 hover:bg-red-500/10 transition-all cursor-pointer">
+                ✕
+            </button>
+        </div>
+
+        <!-- All Product বাটন -->
+        <a href="{% url 'all_product' %}" class="text-xs font-bold text-[#d4af37] border border-[#d4af37]/30 px-4 py-3.5 rounded-xl hover:bg-[#d4af37]/10 transition-all text-center flex items-center justify-center gap-2">
+            🛍️ All Product
+        </a>
+
+        <!-- Add Size বাটন -->
+        <a href="#" class="text-xs font-bold text-[#d4af37] border border-[#d4af37]/30 px-4 py-3.5 rounded-xl hover:bg-[#d4af37]/10 transition-all text-center flex items-center justify-center gap-2">
+            📏 Add Size
+        </a>
+
+        <!-- All Orders বাটন -->
+        <a href="{% url 'all_customer' %}" class="text-xs font-bold text-[#d4af37] border border-[#d4af37]/30 px-4 py-3.5 rounded-xl hover:bg-[#d4af37]/10 transition-all text-center flex items-center justify-center gap-2">
+            📋 All Orders
+        </a>
+        
+        <!-- ড্যাশবোর্ডে ফিরে যান বাটন -->
+        <a href="{% url 'admin_panel' %}" class="text-xs font-bold text-[#0b0c10] bg-gradient-to-r from-[#ffe58f] via-[#d4af37] to-[#aa7c11] px-4 py-3.5 rounded-xl hover:brightness-110 transition-all text-center mt-auto shadow-lg">
+            ← ড্যাশবোর্ডে ফিরে যান
+        </a>
+    </div>
+</header>
+
+<!-- ডানপাশ থেকে স্লাইড এবং ওভারলে হ্যান্ডেল করার জন্য জাভাস্ক্রিপ্ট -->
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+
+    function openMenu() {
+        mobileMenu.classList.remove('translate-x-full');
+        menuOverlay.classList.remove('hidden');
+        setTimeout(() => menuOverlay.classList.remove('opacity-0'), 10);
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.add('translate-x-full');
+        menuOverlay.classList.add('opacity-0');
+        setTimeout(() => menuOverlay.classList.add('hidden'), 300);
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+</script>
