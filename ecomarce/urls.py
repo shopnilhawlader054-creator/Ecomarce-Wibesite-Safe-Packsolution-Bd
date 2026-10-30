@@ -46,7 +46,7 @@ urlpatterns = [
     path('catagory/',view=others_catagory,name='others_catagory'),
     path('Packaging_Machineries_catagory/',view= Packaging_Machineries_catagory,name='Packaging_Machineries_catagory'),
     path('addtocart/',view=add_to_cart,name='add_to_cart'),
-    path('api-auth/', include('rest_framework.urls')),
+    # path('api-auth/', include('rest_framework.urls')),
     path('register/',view=register,name='register'),
     path('login/',view=logins,name='login'),
     path('logout/',view=logouts,name='logout'),

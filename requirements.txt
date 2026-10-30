@@ -1,0 +1,7 @@
+asgiref==3.13.0
+Django==6.1.2
+django-tailwind==4.6.0
+pillow==13.0.0
+pytailwindcss==0.4.2
+sqlparse==0.6.0
+tzdata==2026.6

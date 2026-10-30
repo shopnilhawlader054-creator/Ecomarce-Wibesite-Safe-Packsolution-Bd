@@ -39,7 +39,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const ORDER_URL = '/order_form/';
 
   const $ = (id) => document.getElementById(id);
-  const clamp = (v) => Math.min(MAX_QTY, Math.max(MIN_QTY, v));
+  function clamp (v,category){
+        if (category === 'tape' || 'tape_cutter'){
+          console.log('dokse')
+         return Math.min(50, Math.max(1, v))
+        }
+        else{
+         return Math.min(MAX_QTY, Math.max(MIN_QTY, v))
+        }
+     }
   const taka = (n) => '৳' + Number(n).toFixed(2);
   const fmtWeight = (g) => (g >= 1000 ? (g / 1000).toFixed(2) + ' Kg' : g + ' Grams');
   // innerHTML-e boshanor age escape (XSS theke bachte)
@@ -178,19 +186,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
   sizeCards.forEach((card) => {
     const input = card.querySelector('.qty-input');
+    const category = card.dataset.status || ''
+    console.log(category)
     if (input) {
       const fix = () => {
+         console.log(category)
+          console.log('function  in input')
         const v = Number(input.value) || 0;
-        input.value = v === 0 ? 0 : clamp(v);   // 0 = select kora nai
+        input.value = v === 0 ? 0 : clamp(v,category);   // 0 = select kora nai
         renderOrderSummary();
       };
       card.querySelector('.btn-plus')?.addEventListener('click', () => {
-        input.value = clamp((Number(input.value) || 0) + 1);
+         
+        input.value = clamp((Number(input.value) || 0) + 1,category);
         renderOrderSummary();
       });
       card.querySelector('.btn-minus')?.addEventListener('click', () => {
         const v = Number(input.value) || 0;
+        if (category === 'tape' || 'tape_cutter'){
+          input.value = v <= 1? 0 : v - 1; 
+        }
+        else{
         input.value = v <= MIN_QTY ? 0 : v - 1;   // MIN_QTY-te minus = deselect
+        }
         renderOrderSummary();
       });
       input.addEventListener('blur', fix);

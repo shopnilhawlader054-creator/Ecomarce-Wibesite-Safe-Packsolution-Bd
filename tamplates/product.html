@@ -64,7 +64,7 @@
               
               {% for size in product_size %}
               <div class="size-card bg-[#12141c] border border-slate-800 rounded-xl p-3 flex items-center justify-between transition-all hover:border-slate-600 hover:bg-[#181b26]"
-                   data-name="{{ size.productsize }}" data-weight="{{ size.weight }}" data-price="{{ size.price }}">
+                   data-name="{{ size.productsize }}" data-status="{{product.category}}" data-weight="{{ size.weight }}" data-price="{{ size.price }}">
                 
                 <div class="flex-1">
                   <h5 class="text-sm font-bold text-slate-200">{{ size.productsize }}</h5>
